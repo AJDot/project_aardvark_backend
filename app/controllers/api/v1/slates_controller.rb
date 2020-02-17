@@ -1,11 +1,12 @@
 module Api
   module V1
     class SlatesController < ApplicationController
+      before_action :authorize_access_request!
       before_action :set_slate, only: [:show, :update, :destroy]
 
       # GET /slates
       def index
-        @slates = Slate.all
+        @slates = current_user.slates.all
 
         render json: @slates
       end
@@ -17,7 +18,7 @@ module Api
 
       # POST /slates
       def create
-        @slate = Slate.new(slate_params)
+        @slate = current_user.slates.build(slate_params)
 
         if @slate.save
           render json: @slate, status: :created, location: @slate
