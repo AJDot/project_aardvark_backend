@@ -1,10 +1,9 @@
-class User
+class Slate
   include Mongoid::Document
   include Mongoid::Timestamps::Short
 
-  field :first_name, type: String
-  field :last_name, type: String
-  field :email, allow_nil: false
+  belongs_to :user
+  field :title, type: String
 
-  has_secure_password
+  validates :title, presence: true
 end
