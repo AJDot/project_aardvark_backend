@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/api/v1/slates_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/slate.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/refresh_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/signin_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/signup_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/initializers/jwt_sessions.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/slates_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/slates_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/cors.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/cors.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GeneratorOptions">
+    <option name="ENVIRONMENT" value="development" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +51,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/controllers/api/v1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/controllers" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
@@ -54,6 +62,12 @@
       <recent name="$PROJECT_DIR$/app/models" />
       <recent name="$PROJECT_DIR$/config" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="rails g controller" />
+      <command value="rails g scaffold_controller" />
+    </option>
   </component>
   <component name="RunManager" selected="Rails.Development: project_aardvark_backend">
     <configuration name="Development: project_aardvark_backend" type="RailsRunConfigurationType" factoryName="Rails">
@@ -165,7 +179,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581962522710</updated>
-      <workItem from="1581962523944" duration="1166000" />
+      <workItem from="1581962523944" duration="1969000" />
+      <workItem from="1581964625189" duration="1114000" />
     </task>
     <servers />
   </component>
@@ -173,42 +188,46 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2514" height="404" key="GridCell.Tab.0.bottom" timestamp="1581963585831">
+    <state width="2514" height="404" key="GridCell.Tab.0.bottom" timestamp="1581964566441">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="404" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963585831" />
-    <state width="2514" height="404" key="GridCell.Tab.0.center" timestamp="1581963585831">
+    <state width="2514" height="404" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964566441" />
+    <state width="2514" height="404" key="GridCell.Tab.0.center" timestamp="1581964566441">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="404" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963585831" />
-    <state width="2514" height="404" key="GridCell.Tab.0.left" timestamp="1581963585831">
+    <state width="2514" height="404" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964566441" />
+    <state width="2514" height="404" key="GridCell.Tab.0.left" timestamp="1581964566441">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="404" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963585831" />
-    <state width="2514" height="404" key="GridCell.Tab.0.right" timestamp="1581963585831">
+    <state width="2514" height="404" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964566441" />
+    <state width="2514" height="404" key="GridCell.Tab.0.right" timestamp="1581964566441">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="404" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963585831" />
-    <state width="2514" height="404" key="GridCell.Tab.1.bottom" timestamp="1581963585831">
+    <state width="2514" height="404" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964566441" />
+    <state width="2514" height="404" key="GridCell.Tab.1.bottom" timestamp="1581964300365">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="404" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963585831" />
-    <state width="2514" height="404" key="GridCell.Tab.1.center" timestamp="1581963585831">
+    <state width="2514" height="404" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964300365" />
+    <state width="2514" height="404" key="GridCell.Tab.1.center" timestamp="1581964300364">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="404" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963585831" />
-    <state width="2514" height="404" key="GridCell.Tab.1.left" timestamp="1581963585831">
+    <state width="2514" height="404" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964300364" />
+    <state width="2514" height="404" key="GridCell.Tab.1.left" timestamp="1581964300364">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="404" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963585831" />
-    <state width="2514" height="404" key="GridCell.Tab.1.right" timestamp="1581963585831">
+    <state width="2514" height="404" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964300364" />
+    <state width="2514" height="404" key="GridCell.Tab.1.right" timestamp="1581964300365">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="404" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963585831" />
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1581963596919">
+    <state width="2514" height="404" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964300365" />
+    <state x="2864" y="336" width="672" height="677" key="run.anything.popup" timestamp="1581964476626">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581963596919" />
+    <state x="2864" y="336" width="672" height="677" key="run.anything.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964476626" />
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1581964927128">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964927128" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/project_aardvark_backend@Development__project_aardvark_backend.rcov" NAME="Development: project_aardvark_backend Coverage Results" MODIFIED="1581963021710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_aardvark_backend" />
