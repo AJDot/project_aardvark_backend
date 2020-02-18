@@ -9,7 +9,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Signin',
+      name: 'signin',
       component: Signin,
     },
   ],

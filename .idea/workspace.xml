@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/signin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/app.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/app.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/backend/axios/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/backend/axios/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/assets/logo.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +57,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -189,7 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581962522710</updated>
       <workItem from="1581962523944" duration="1969000" />
-      <workItem from="1581964625189" duration="10430000" />
+      <workItem from="1581964625189" duration="12038000" />
     </task>
     <servers />
   </component>
@@ -200,6 +196,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2933" y="469" width="524" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581986496303">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2933" y="469" width="524" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581986496303" />
     <state width="2514" height="404" key="GridCell.Tab.0.bottom" timestamp="1581972166458">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -232,10 +232,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state width="2514" height="404" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581972166458" />
-    <state x="2689" y="355" width="1022" height="734" key="SettingsEditor" timestamp="1581973533093">
+    <state x="2284" y="160" width="1927" height="1187" key="SettingsEditor" timestamp="1581987086500">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2689" y="355" width="1022" height="734" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581973533093" />
+    <state x="2284" y="160" width="1927" height="1187" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581987086500" />
     <state x="2848" y="431" width="704" height="578" key="find.popup" timestamp="1581968527062">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
