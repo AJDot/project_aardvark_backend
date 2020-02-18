@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/app-header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/signup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/app.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/app.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/signin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/signin.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +50,9 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config/initializers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project_aardvark_frontend/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,15 +62,15 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+    <property name="settings.editor.selected.configurable" value="settings.webpack" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/components" />
       <recent name="$PROJECT_DIR$/config/initializers" />
       <recent name="$PROJECT_DIR$/app/controllers" />
       <recent name="$PROJECT_DIR$/app/controllers/api/v1" />
       <recent name="$PROJECT_DIR$/app/models" />
-      <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -185,7 +190,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581962522710</updated>
       <workItem from="1581962523944" duration="1969000" />
-      <workItem from="1581964625189" duration="12038000" />
+      <workItem from="1581964625189" duration="14892000" />
     </task>
     <servers />
   </component>
@@ -232,10 +237,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state width="2514" height="404" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581972166458" />
-    <state x="2284" y="160" width="1927" height="1187" key="SettingsEditor" timestamp="1581987086500">
+    <state x="2284" y="160" width="1927" height="1187" key="SettingsEditor" timestamp="1581988915371">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2284" y="160" width="1927" height="1187" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581987086500" />
+    <state x="2284" y="160" width="1927" height="1187" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581988915371" />
     <state x="2848" y="431" width="704" height="578" key="find.popup" timestamp="1581968527062">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -244,10 +249,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2864" y="336" width="672" height="677" key="run.anything.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964476626" />
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1581973337642">
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1581987738643">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581973337642" />
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581987738643" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/project_aardvark_backend@Development__project_aardvark_backend.rcov" NAME="Development: project_aardvark_backend Coverage Results" MODIFIED="1581968531645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_aardvark_backend" />

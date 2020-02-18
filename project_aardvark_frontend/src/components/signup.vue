@@ -2,11 +2,12 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'signin',
+  name: 'signup',
   data: function () {
     return {
       email: '',
       password: '',
+      passwordConfirmation: '',
       error: '',
     }
   },
@@ -17,14 +18,18 @@ export default Vue.extend({
     this.checkSignedIn()
   },
   methods: {
-    signin () {
-      this.$http.plain.post('/signin', {email: this.email, password: this.password})
-        .then(response => this.signinSuccessful(response))
-        .catch(error => this.signinFailed(error))
+    signup () {
+      this.$http.plain.post('/signup', {
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.passwordConfirmation,
+      })
+        .then(response => this.signupSuccessful(response))
+        .catch(error => this.signupFailed(error))
     },
-    signinSuccessful (response) {
+    signupSuccessful (response) {
       if (!response.data.csrf) {
-        this.signinFailed(response)
+        this.signupFailed(response)
         return
       }
 
@@ -33,8 +38,8 @@ export default Vue.extend({
       this.error = ''
       this.$router.replace('/slates')
     },
-    signinFailed (error) {
-      this.error = (error.response && error.response.data && error.response.data.error) || ''
+    signupFailed (error) {
+      this.error = (error.response && error.response.data && error.response.data.error) || 'Somethign went wrong'
       delete localStorage.csrf
       delete localStorage.signedIn
     },
@@ -50,8 +55,8 @@ export default Vue.extend({
 <template>
   <div class="max-w-sm m-auto my-8">
     <div class="border p-10 border-grey-400 shadow rounded">
-      <h3 class="text-2xl mb-6 text-grey-900">Sign In</h3>
-      <form @submit.prevent="signin">
+      <h3 class="text-2xl mb-6 text-grey-900">Sign Up</h3>
+      <form @submit.prevent="signup">
         <div v-if="error" class="text-red">{{error}}</div>
         <div class="mb-6">
           <label for="email" class="label">Email</label>
@@ -63,13 +68,18 @@ export default Vue.extend({
           <input type="password" v-model="password" class="input" id="password">
         </div>
 
+        <div class="mb-6">
+          <label for="password-confirmation" class="label">Password Confirmation</label>
+          <input type="password" v-model="passwordConfirmation" class="input" id="password-confirmation">
+        </div>
+
         <button type="submit"
                 class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:br-green-700 block w-full py-4 text-white items-center justify-center">
-          Sign In
+          Sign Up
         </button>
 
         <div class="my-4">
-          <router-link :to="{name: 'signup'}" class="link">Sign Up</router-link>
+          <router-link :to="{name: 'signin'}" class="link">Sign In</router-link>
         </div>
       </form>
     </div>

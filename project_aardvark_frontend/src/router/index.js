@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Signin from '@/components/signin.vue'
+import Signup from '@/components/signup.vue'
 
 Vue.use(Router)
 
@@ -9,8 +10,18 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'root',
+      redirect: {name: 'signin'},
+    },
+    {
+      path: '/signin',
       name: 'signin',
       component: Signin,
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: Signup,
     },
   ],
 })
