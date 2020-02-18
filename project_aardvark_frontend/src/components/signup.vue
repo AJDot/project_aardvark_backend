@@ -36,16 +36,16 @@ export default Vue.extend({
       localStorage.csrf = response.data.csrf
       localStorage.signedIn = true
       this.error = ''
-      this.$router.replace('/slates')
+      this.$router.replace({name: 'slates-index'})
     },
     signupFailed (error) {
-      this.error = (error.response && error.response.data && error.response.data.error) || 'Somethign went wrong'
+      this.error = (error.response && error.response.data && error.response.data.errors) || 'Something went wrong'
       delete localStorage.csrf
       delete localStorage.signedIn
     },
     checkSignedIn () {
       if (localStorage.signedIn) {
-        this.$router.replace('/slates')
+        this.$router.replace({name: 'slates-index'})
       }
     },
   },

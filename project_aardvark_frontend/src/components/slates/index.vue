@@ -6,9 +6,9 @@ export default Vue.extend({
   data: function () {
     return {
       slates: [],
-      newSlate: [],
+      newSlate: {},
       error: '',
-      editedSlate: '',
+      editedSlate: {},
     }
   },
   created () {
@@ -24,7 +24,7 @@ export default Vue.extend({
   },
   methods: {
     setError (error, text) {
-      this.error = (error.response && error.response.data && error.response.data.error) || text
+      this.error = (error.response && error.response.data && error.response.data.errors) || text
     },
     addSlate () {
       const value = this.newSlate
@@ -34,12 +34,12 @@ export default Vue.extend({
       this.$http.secured.post('/api/v1/slates', {slate: {title: this.newSlate.title}})
         .then(response => {
           this.slates.push(response.data)
-          this.newSlate = ''
+          this.newSlate = {}
         })
         .catch(error => this.setError(error, 'Cannot create slate'))
     },
     removeSlate (slate) {
-      this.$http.secured.post(`/api/v1/slates/${slate.id}`)
+      this.$http.secured.delete(`/api/v1/slates/${slate.id}`)
         .then(response => {
           this.slates.splice(this.slates.indexOf(slate), 1)
         })
@@ -49,8 +49,8 @@ export default Vue.extend({
       this.editedSlate = slate
     },
     updateSlate (slate) {
-      this.editedSlate = ''
-      this.$http.secured.patch(`api/v1/artists/${slate.id}`, {slate: {title: slate.title}})
+      this.editedSlate = {}
+      this.$http.secured.patch(`api/v1/slates/${slate.id}`, {slate: {title: slate.title}})
         .catch(error => this.setError(error, 'Cannot update slate'))
     },
   },
@@ -69,7 +69,7 @@ export default Vue.extend({
           autofocus
           autocomplete="off"
           placeholder="Enter slate title"
-          v-model="newSlate.name"
+          v-model="newSlate.title"
         >
         <input type="submit" value="Add Slate"
                class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-700 block w-full py-4 text-white item-center justify-center">
@@ -96,19 +96,19 @@ export default Vue.extend({
             Delete
           </button>
         </div>
-      </li>
 
-      <div v-if="slate === editedSlate">
-        <form @submit.prevent="updateSlate(slate)">
-          <div class="mb-6 p-4 bh-white rounded-border border-gray-400 mt-4">
-            <input v-model="slate.title" type="text" class="input">
-            <input
-              type="submit"
-              value="Update"
-              class="my-2 bg-transparent text-sm hover:bg-blue hover:text-white text-blue border-blue no-underline font-bold py-2 px-4 rounded cursor-pointer">
-          </div>
-        </form>
-      </div>
+        <div v-if="slate === editedSlate">
+          <form @submit.prevent="updateSlate(slate)">
+            <div class="mb-6 p-4 bh-white rounded-border border-gray-400 mt-4">
+              <input v-model="slate.title" type="text" class="input">
+              <input
+                type="submit"
+                value="Update"
+                class="my-2 bg-transparent text-sm hover:bg-blue hover:text-white text-blue border-blue no-underline font-bold py-2 px-4 rounded cursor-pointer">
+            </div>
+          </form>
+        </div>
+      </li>
     </ul>
   </div>
 </template>

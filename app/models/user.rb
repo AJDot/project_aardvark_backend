@@ -9,7 +9,7 @@ class User
   field :last_name, type: String
   field :email, type: String
 
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
 
   has_many :slates, dependent: :destroy
 end

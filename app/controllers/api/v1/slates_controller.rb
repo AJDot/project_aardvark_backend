@@ -21,7 +21,7 @@ module Api
         @slate = current_user.slates.build(slate_params)
 
         if @slate.save
-          render json: @slate, status: :created, location: @slate
+          render json: @slate, status: :created
         else
           render json: @slate.errors, status: :unprocessable_entity
         end
