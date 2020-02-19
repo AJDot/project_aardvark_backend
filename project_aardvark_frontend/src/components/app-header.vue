@@ -2,7 +2,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'app-header',
+  name: 'AppHeader',
   computed: {
     signedIn () {
       return localStorage.signedIn
@@ -32,10 +32,35 @@ export default Vue.extend({
         <router-link :to="{name: 'root'}">Project Aardvark</router-link>
       </div>
       <div>
-        <router-link :to="{name: 'signin'}" v-if="!signedIn" class="link-gray px-2 no-underline">Sign In</router-link>
-        <router-link :to="{name: 'signup'}" v-if="!signedIn" class="link-gray px-2 no-underline">Sign Up</router-link>
-        <router-link :to="{name: 'slates-index'}" v-if="signedIn" class="link-gray px-2 no-underline">Slates</router-link>
-        <a href="#" @click.prevent="signOut" v-if="signedIn" class="link-gray px-2 no-underline">Sign Out</a>
+        <router-link
+          v-if="!signedIn"
+          :to="{name: 'signin'}"
+          class="link-gray px-2 no-underline"
+        >
+          Sign In
+        </router-link>
+        <router-link
+          v-if="!signedIn"
+          :to="{name: 'signup'}"
+          class="link-gray px-2 no-underline"
+        >
+          Sign Up
+        </router-link>
+        <router-link
+          v-if="signedIn"
+          :to="{name: 'slates-index'}"
+          class="link-gray px-2 no-underline"
+        >
+          Slates
+        </router-link>
+        <a
+          v-if="signedIn"
+          @click.prevent="signOut"
+          href="#"
+          class="link-gray px-2 no-underline"
+        >
+          Sign Out
+        </a>
       </div>
     </div>
   </header>

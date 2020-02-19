@@ -1,8 +1,13 @@
-<script>
+<script lang="ts">
 import Vue from 'vue'
 
+interface ISlate {
+  id: string
+  title: string
+}
+
 export default Vue.extend({
-  name: 'slates-index',
+  name: 'SlatesIndex',
   data: function () {
     return {
       slates: [],
@@ -16,14 +21,14 @@ export default Vue.extend({
       this.$router.replace({name: 'root'})
     } else {
       this.$http.secured.get('/api/v1/slates')
-        .then(response => {
+        .then((response: any) => {
           this.slates = response.data
         })
-        .catch(error => this.setError(error, 'Something went wrong'))
+        .catch((error: any) => this.setError(error, 'Something went wrong'))
     }
   },
   methods: {
-    setError (error, text) {
+    setError (error: any, text: any) {
       this.error = (error.response && error.response.data && error.response.data.errors) || text
     },
     addSlate () {
@@ -59,40 +64,50 @@ export default Vue.extend({
 
 <template>
   <div class="max-w-md m-auto py-10">
-    <div v-if="error" class="text-red">{{error}}</div>
+    <div
+      v-if="error"
+      class="text-red">{{ error }}</div>
     <h3 class="font-mono font-regular text-3xl mb-4">Add Slate</h3>
     <form @submit.prevent="addSlate">
       <div class="mb-6">
         <input
+          v-model="newSlate.title"
           type="text"
           class="input"
           autofocus
           autocomplete="off"
           placeholder="Enter slate title"
-          v-model="newSlate.title"
         >
-        <input type="submit" value="Add Slate"
-               class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-700 block w-full py-4 text-white item-center justify-center">
+        <input
+          type="submit"
+          value="Add Slate"
+          class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-700 block w-full py-4 text-white item-center justify-center">
       </div>
     </form>
 
     <hr class="border border-gray-400 my-6">
 
     <ul class="list-reset mt-4">
-      <li v-for="slate in slates" :key="slate.id" :slate="slate" class="py-4">
+      <li
+        v-for="slate in slates"
+        :key="slate.id"
+        :slate="slate"
+        class="py-4">
         <div class="flex items-center justify-between flex-wrap">
           <p class="block flex-1 font-mono font-semibold flex items-center">
-            {{slate.title}}
+            {{ slate.title }}
           </p>
 
           <button
             @click.prevent="editSlate(slate)"
-            class="by-transparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py2 px-4 mr-2 rounded">
+            class="by-transparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py2 px-4 mr-2 rounded"
+          >
             Edit
           </button>
           <button
             @click.prevent="removeSlate(slate)"
-            class="by-transparent text-sm hover:bg-red hover:text-white text-red border border-red no-underline font-bold py2 px-4 mr-2 rounded">
+            class="by-transparent text-sm hover:bg-red hover:text-white text-red border border-red no-underline font-bold py2 px-4 mr-2 rounded"
+          >
             Delete
           </button>
         </div>
@@ -100,7 +115,10 @@ export default Vue.extend({
         <div v-if="slate === editedSlate">
           <form @submit.prevent="updateSlate(slate)">
             <div class="mb-6 p-4 bh-white rounded-border border-gray-400 mt-4">
-              <input v-model="slate.title" type="text" class="input">
+              <input
+                v-model="slate.title"
+                type="text"
+                class="input">
               <input
                 type="submit"
                 value="Update"

@@ -2,16 +2,22 @@
 
 module.exports = {
   root: true,
+  parser: 'vue-eslint-parser',
+  // parserOptions: {
+  //   parser: 'babel-eslint'
+  // },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@typescript-eslint/parser',
+    extraFileExtensions: ['.vue']
   },
   env: {
     browser: true,
   },
   extends: [
+    'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential',
+    'plugin:vue/recommended',
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
@@ -27,5 +33,20 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'comma-dangle': ['error', 'always-multiline'],
     'semi': ['error', 'never'],
+    "vue/attributes-order": ["error", {
+      "order": [
+        "DEFINITION",
+        "LIST_RENDERING",
+        "CONDITIONALS",
+        "RENDER_MODIFIERS",
+        "GLOBAL",
+        "UNIQUE",
+        "TWO_WAY_BINDING",
+        "OTHER_DIRECTIVES",
+        "OTHER_ATTR",
+        "EVENTS",
+        "CONTENT"
+      ]
+    }]
   }
 }

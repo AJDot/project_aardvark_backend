@@ -2,7 +2,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'signin',
+  name: 'Signin',
   data: function () {
     return {
       email: '',
@@ -52,24 +52,42 @@ export default Vue.extend({
     <div class="border p-10 border-grey-400 shadow rounded">
       <h3 class="text-2xl mb-6 text-grey-900">Sign In</h3>
       <form @submit.prevent="signin">
-        <div v-if="error" class="text-red">{{error}}</div>
+        <div
+          v-if="error"
+          class="text-red">{{ error }}</div>
         <div class="mb-6">
-          <label for="email" class="label">Email</label>
-          <input type="email" v-model="email" class="input" id="email" placeholder="awesome@email.com">
+          <label
+            for="email"
+            class="label">Email</label>
+          <input
+            v-model="email"
+            id="email"
+            type="email"
+            class="input"
+            placeholder="awesome@email.com">
         </div>
 
         <div class="mb-6">
-          <label for="password" class="label">Password</label>
-          <input type="password" v-model="password" class="input" id="password">
+          <label
+            for="password"
+            class="label">Password</label>
+          <input
+            v-model="password"
+            id="password"
+            type="password"
+            class="input">
         </div>
 
-        <button type="submit"
-                class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:br-green-700 block w-full py-4 text-white items-center justify-center">
+        <button
+          type="submit"
+          class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:br-green-700 block w-full py-4 text-white items-center justify-center">
           Sign In
         </button>
 
         <div class="my-4">
-          <router-link :to="{name: 'signup'}" class="link">Sign Up</router-link>
+          <router-link
+            :to="{name: 'signup'}"
+            class="link">Sign Up</router-link>
         </div>
       </form>
     </div>

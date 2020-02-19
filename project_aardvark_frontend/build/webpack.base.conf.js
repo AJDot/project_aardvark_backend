@@ -3,13 +3,14 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 const createLintingRule = () => ({
-  test: /\.(js|vue)$/,
+  test: /\.(ts|js|vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
   include: [resolve('src'), resolve('test')],
@@ -32,7 +33,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       '@': resolve('src'),
     }
@@ -44,6 +45,14 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
+      },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
+        options: {
+          transpileOnly: true,
+        }
       },
       {
         test: /\.js$/,
@@ -87,5 +96,8 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 }
