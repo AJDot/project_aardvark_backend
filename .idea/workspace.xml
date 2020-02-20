@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/backend/axios/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/backend/axios/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/vue-shim.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/vue-shim.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +191,7 @@
       <workItem from="1581962523944" duration="1969000" />
       <workItem from="1581964625189" duration="23594000" />
       <workItem from="1582075653040" duration="1431000" />
-      <workItem from="1582111680818" duration="323000" />
+      <workItem from="1582111680818" duration="3086000" />
     </task>
     <servers />
   </component>

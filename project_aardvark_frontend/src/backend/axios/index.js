@@ -1,6 +1,4 @@
-// import vue from 'vue'
 import axios from 'axios'
-// import VueAxios from 'vue-axios'
 
 const API_URL = 'http://localhost:3000'
 
