@@ -18,7 +18,7 @@ export default Vue.extend({
   },
   methods: {
     signin () {
-      this.$http.plain.post('/signin', {email: this.email, password: this.password})
+      this.$http.plain.post('/signin', { email: this.email, password: this.password })
         .then(response => this.signinSuccessful(response))
         .catch(error => this.signinFailed(error))
     },
@@ -31,7 +31,7 @@ export default Vue.extend({
       localStorage.csrf = response.data.csrf
       localStorage.signedIn = true
       this.error = ''
-      this.$router.replace({name: 'slates-index'})
+      this.$router.replace({ name: 'slates-index' })
     },
     signinFailed (error) {
       this.error = (error.response && error.response.data && error.response.data.errors) || ''
@@ -40,7 +40,7 @@ export default Vue.extend({
     },
     checkSignedIn () {
       if (localStorage.signedIn) {
-        this.$router.replace({name: 'slates-index'})
+        this.$router.replace({ name: 'slates-index' })
       }
     },
   },
@@ -50,44 +50,57 @@ export default Vue.extend({
 <template>
   <div class="max-w-sm m-auto my-8">
     <div class="border p-10 border-grey-400 shadow rounded">
-      <h3 class="text-2xl mb-6 text-grey-900">Sign In</h3>
+      <h3 class="text-2xl mb-6 text-grey-900">
+        Sign In
+      </h3>
       <form @submit.prevent="signin">
         <div
           v-if="error"
-          class="text-red">{{ error }}</div>
+          class="text-red"
+        >
+          {{ error }}
+        </div>
         <div class="mb-6">
           <label
             for="email"
-            class="label">Email</label>
+            class="label"
+          >Email</label>
           <input
-            v-model="email"
             id="email"
+            v-model="email"
             type="email"
             class="input"
-            placeholder="awesome@email.com">
+            placeholder="awesome@email.com"
+          >
         </div>
 
         <div class="mb-6">
           <label
             for="password"
-            class="label">Password</label>
+            class="label"
+          >Password</label>
           <input
-            v-model="password"
             id="password"
+            v-model="password"
             type="password"
-            class="input">
+            class="input"
+          >
         </div>
 
         <button
           type="submit"
-          class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:br-green-700 block w-full py-4 text-white items-center justify-center">
+          class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:br-green-700 block w-full py-4 text-white items-center justify-center"
+        >
           Sign In
         </button>
 
         <div class="my-4">
           <router-link
             :to="{name: 'signup'}"
-            class="link">Sign Up</router-link>
+            class="link"
+          >
+            Sign Up
+          </router-link>
         </div>
       </form>
     </div>

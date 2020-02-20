@@ -12,7 +12,7 @@ export default new Router({
     {
       path: '/',
       name: 'root',
-      redirect: {name: 'signin'},
+      redirect: { name: 'signin' },
     },
     {
       path: '/signin',

@@ -17,7 +17,7 @@ export default Vue.extend({
         .then(response => {
           delete localStorage.csrf
           delete localStorage.signedIn
-          this.$router.replace({name: 'root'})
+          this.$router.replace({ name: 'root' })
         })
         .catch(error => this.setError(error, 'Cannot sign out'))
     },
@@ -29,7 +29,9 @@ export default Vue.extend({
   <header class="bg-gray-500 py-4">
     <div class="container m-auto flex flex-wrap items-center justify-end">
       <div class="flex-1 flex items-center">
-        <router-link :to="{name: 'root'}">Project Aardvark</router-link>
+        <router-link :to="{name: 'root'}">
+          Project Aardvark
+        </router-link>
       </div>
       <div>
         <router-link
@@ -55,9 +57,9 @@ export default Vue.extend({
         </router-link>
         <a
           v-if="signedIn"
-          @click.prevent="signOut"
           href="#"
           class="link-gray px-2 no-underline"
+          @click.prevent="signOut"
         >
           Sign Out
         </a>
