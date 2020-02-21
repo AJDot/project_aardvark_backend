@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Signin from '@/components/signin.vue'
 import Signup from '@/components/signup.vue'
+import NotFound from '@/components/not-found.vue'
 import SlatesIndex from '@/components/slates/index.vue'
 
 Vue.use(Router)
@@ -28,6 +29,11 @@ export default new Router({
       path: '/slates',
       name: 'slates-index',
       component: SlatesIndex,
+    },
+    {
+      path: '*',
+      name: 'not-found',
+      component: NotFound,
     },
   ],
 })
