@@ -1,5 +1,6 @@
 <script lang="ts">
 import Vue from 'vue'
+import store from '@/store'
 
 interface ISlate {
   id: string
@@ -17,7 +18,7 @@ export default Vue.extend({
     }
   },
   created () {
-    if (!localStorage.signedIn) {
+    if (!store.state.signedIn) {
       this.$router.replace({ name: 'root' })
     } else {
       this.$http.secured.get('/api/v1/slates')

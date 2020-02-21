@@ -1,8 +1,9 @@
-<script>
+<script lang="ts">
 import Vue from 'vue'
+import store from '@/store'
 
 export default Vue.extend({
-  name: 'Signin',
+  name: 'SignIn',
   data: function () {
     return {
       email: '',
@@ -28,18 +29,16 @@ export default Vue.extend({
         return
       }
 
-      localStorage.csrf = response.data.csrf
-      localStorage.signedIn = true
+      store.dispatch('signIn', response.data.csrf)
       this.error = ''
       this.$router.replace({ name: 'slates-index' })
     },
     signinFailed (error) {
-      this.error = (error.response && error.response.data && error.response.data.errors) || ''
-      delete localStorage.csrf
-      delete localStorage.signedIn
+      this.error = (error.response && error.response.data && error.response.data.error) || ''
+      store.dispatch('signOut')
     },
     checkSignedIn () {
-      if (localStorage.signedIn) {
+      if (store.state.signedIn) {
         this.$router.replace({ name: 'slates-index' })
       }
     },

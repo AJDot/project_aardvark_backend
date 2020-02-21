@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 import Vue from 'vue'
+import store from '@/store'
 
 export default Vue.extend({
   name: 'AppHeader',
   computed: {
     signedIn () {
-      return localStorage.signedIn
+      return store.state.signedIn
     },
   },
   methods: {
@@ -15,8 +16,7 @@ export default Vue.extend({
     signOut () {
       this.$http.secured.delete('/signin')
         .then(response => {
-          delete localStorage.csrf
-          delete localStorage.signedIn
+          store.dispatch('signOut')
           this.$router.replace({ name: 'root' })
         })
         .catch(error => this.setError(error, 'Cannot sign out'))

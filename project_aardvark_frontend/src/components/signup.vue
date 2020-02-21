@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 import Vue from 'vue'
+import store from '@/store'
 
 export default Vue.extend({
   name: 'Signup',
@@ -33,18 +34,16 @@ export default Vue.extend({
         return
       }
 
-      localStorage.csrf = response.data.csrf
-      localStorage.signedIn = true
+      store.dispatch('signIn', response.data.csrf)
       this.error = ''
       this.$router.replace({ name: 'slates-index' })
     },
     signupFailed (error) {
       this.error = (error.response && error.response.data && error.response.data.errors) || 'Something went wrong'
-      delete localStorage.csrf
-      delete localStorage.signedIn
+      store.dispatch('signOut')
     },
     checkSignedIn () {
-      if (localStorage.signedIn) {
+      if (store.state.signedIn) {
         this.$router.replace({ name: 'slates-index' })
       }
     },
