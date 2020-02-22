@@ -20,7 +20,7 @@ const plainAxiosInstance = axios.create({
 })
 
 securedAxiosInstance.interceptors.request.use(config => {
-  const method = config.method.toUpperCase()
+  const method = config?.method?.toUpperCase()
   if (method !== 'OPTIONS' && method !== 'GET') {
     config.headers = {
       ...config.headers,
@@ -30,7 +30,7 @@ securedAxiosInstance.interceptors.request.use(config => {
   return config
 })
 
-securedAxiosInstance.interceptors.response.use(null, error => {
+securedAxiosInstance.interceptors.response.use(response => response, error => {
   // cookie expired or 401 response
   if (error.response && error.response.config && error.response.status === 401) {
     return plainAxiosInstance.post('/refresh', {}, { headers: { 'X-CSRF-TOKEN': store.state.csrf } })
