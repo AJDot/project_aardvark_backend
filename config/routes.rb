@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   post 'refresh', controller: :refresh, action: :create
-  post 'signin', controller: :signin, action: :create
-  post 'signup', controller: :signup, action: :create
-  delete 'signin', controller: :signin, action: :destroy
+  post 'sign_in', controller: :sign_in, action: :create
+  post 'sign_up', controller: :sign_up, action: :create
+  delete 'sign_in', controller: :sign_in, action: :destroy
 end

@@ -34,6 +34,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'comma-dangle': ['error', 'always-multiline'],
     'semi': ['error', 'never'],
+    'no-inner-declarations': 'off',
     "vue/attributes-order": ["error", {
       "order": [
         "DEFINITION",
@@ -46,7 +47,7 @@ module.exports = {
         "OTHER_DIRECTIVES",
         "OTHER_ATTR",
         "EVENTS",
-        "CONTENT"
+        "CONTENT",
       ]
     }],
     "@typescript-eslint/no-unused-vars": [2, {args: 'none'}]

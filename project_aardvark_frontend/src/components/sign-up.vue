@@ -1,14 +1,16 @@
 <script lang="ts">
 import Vue from 'vue'
 import store from '@/store'
-import { AxiosResponse } from 'axios'
+import { AxiosError, AxiosResponse } from 'axios'
+import { TAxios } from '@/typeChecks/axios'
 
 export default Vue.extend({
-  name: 'SignIn',
+  name: 'SignUp',
   data: function () {
     return {
       email: '',
       password: '',
+      passwordConfirmation: '',
       error: '',
     }
   },
@@ -19,15 +21,18 @@ export default Vue.extend({
     this.checkSignedIn()
   },
   methods: {
-    signin () {
-      this.$http.plain.post('/signin', { email: this.email, password: this.password })
-        .then(response => this.signinSuccessful(response))
-        .catch(error => this.signinFailed(error))
+    signUp () {
+      this.$http.plain.post('/sign_up', {
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.passwordConfirmation,
+      })
+        .then(response => this.signUpSuccessful(response))
+        .catch(error => this.signUpFailed(error))
     },
-    signinSuccessful (response: AxiosResponse) {
-      console.log(response)
-      if (!response.data.csrf) {
-        this.signinFailed(response)
+    signUpSuccessful (response: AxiosResponse | AxiosError) {
+      if (TAxios.isError(response) || !response.data.csrf) {
+        this.signUpFailed(response)
         return
       }
 
@@ -35,10 +40,12 @@ export default Vue.extend({
       this.error = ''
       this.$router.replace({ name: 'slates-index' })
     },
-    signinFailed (error: any) {
-      console.log(error)
-      // this.error = (error.response && error.response.data && error.response.data.error) || ''
-      // store.dispatch('signOut')
+    signUpFailed (error: AxiosResponse | AxiosError) {
+      if (TAxios.isError(error)) {
+        this.error = (error.response && error.response.data && error.response.data.error) || ''
+      } else {
+        this.error = 'Something went wrong. Please try again later.'
+      }
     },
     checkSignedIn () {
       if (store.state.signedIn) {
@@ -53,9 +60,9 @@ export default Vue.extend({
   <div class="max-w-sm m-auto my-8">
     <div class="border p-10 border-grey-400 shadow rounded">
       <h3 class="text-2xl mb-6 text-grey-900">
-        Sign In
+        Sign Up
       </h3>
-      <form @submit.prevent="signin">
+      <form @submit.prevent="signUp">
         <div
           v-if="error"
           class="text-red"
@@ -89,19 +96,32 @@ export default Vue.extend({
           >
         </div>
 
+        <div class="mb-6">
+          <label
+            for="password-confirmation"
+            class="label"
+          >Password Confirmation</label>
+          <input
+            id="password-confirmation"
+            v-model="passwordConfirmation"
+            type="password"
+            class="input"
+          >
+        </div>
+
         <button
           type="submit"
           class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:br-green-700 block w-full py-4 text-white items-center justify-center"
         >
-          Sign In
+          Sign Up
         </button>
 
         <div class="my-4">
           <router-link
-            :to="{name: 'signup'}"
+            :to="{name: 'signIn'}"
             class="link"
           >
-            Sign Up
+            Sign In
           </router-link>
         </div>
       </form>

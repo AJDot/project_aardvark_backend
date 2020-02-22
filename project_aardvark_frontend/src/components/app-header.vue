@@ -24,7 +24,7 @@ export default Vue.extend({
       this.error = (error.response && error.response.data && error.response.data.error) || text
     },
     signOut () {
-      this.$http.secured.delete('/signin')
+      this.$http.secured.delete('/sign_in')
         .then(response => {
           store.dispatch('signOut')
           this.$router.replace({ name: 'root' })
@@ -46,14 +46,14 @@ export default Vue.extend({
       <div>
         <router-link
           v-if="!signedIn"
-          :to="{name: 'signin'}"
+          :to="{name: 'signIn'}"
           class="link-gray px-2 no-underline"
         >
           Sign In
         </router-link>
         <router-link
           v-if="!signedIn"
-          :to="{name: 'signup'}"
+          :to="{name: 'signUp'}"
           class="link-gray px-2 no-underline"
         >
           Sign Up
