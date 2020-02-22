@@ -2,6 +2,9 @@
 import Vue from 'vue'
 import store from '@/store'
 import { Backend } from '@/types'
+import ModalLink from '@/components/modals/link.vue'
+import SignUp from '@/components/sign-up.vue'
+import SignIn from '@/components/sign-in.vue'
 
 interface IData {
   error: string
@@ -9,6 +12,17 @@ interface IData {
 
 export default Vue.extend({
   name: 'AppHeader',
+  components: {
+    ModalLink,
+    SignUp,
+    SignIn,
+  },
+  props: {
+    id: {
+      type: String,
+      default: null,
+    },
+  },
   data: function (): IData {
     return {
       error: '',
@@ -44,20 +58,20 @@ export default Vue.extend({
         </router-link>
       </div>
       <div>
-        <router-link
+        <modal-link
           v-if="!signedIn"
           :to="{name: 'signIn'}"
           class="link-gray px-2 no-underline"
         >
           Sign In
-        </router-link>
-        <router-link
+        </modal-link>
+        <modal-link
           v-if="!signedIn"
           :to="{name: 'signUp'}"
           class="link-gray px-2 no-underline"
         >
           Sign Up
-        </router-link>
+        </modal-link>
         <router-link
           v-if="signedIn"
           :to="{name: 'slates-index'}"
@@ -75,5 +89,7 @@ export default Vue.extend({
         </a>
       </div>
     </div>
+    <sign-up :from="{name: 'signUp'}" />
+    <sign-in :from="{name: 'signIn'}" />
   </header>
 </template>

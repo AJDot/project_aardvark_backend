@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Signin from '@/components/sign-in.vue'
-import Signup from '@/components/sign-up.vue'
 import NotFound from '@/components/not-found.vue'
 import SlatesIndex from '@/components/slates/index.vue'
 
@@ -13,17 +11,6 @@ export default new Router({
     {
       path: '/',
       name: 'root',
-      redirect: { name: 'signIn' },
-    },
-    {
-      path: '/sign_in',
-      name: 'signIn',
-      component: Signin,
-    },
-    {
-      path: '/sign_up',
-      name: 'signUp',
-      component: Signup,
     },
     {
       path: '/slates',

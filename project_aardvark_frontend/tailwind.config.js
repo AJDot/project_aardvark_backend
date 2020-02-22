@@ -147,7 +147,10 @@ module.exports = {
       '56': '14rem',
       '64': '16rem',
     },
-    backgroundColor: theme => theme('colors'),
+    backgroundColor: theme => ({
+      ...theme('colors'),
+      mask: 'rgba(0, 0, 0, 0.5)',
+    }),
     backgroundPosition: {
       bottom: 'bottom',
       center: 'center',

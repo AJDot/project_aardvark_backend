@@ -15,8 +15,7 @@
 }
 
 .select {
-  @apply appearance-none py-3 px-4 pr-8 block w-full bg-gray-400 border border-gray-400 text-gray-800
-  rounded leading-tight;
+  @apply appearance-none py-3 px-4 pr-8 block w-full bg-gray-400 border border-gray-400 text-gray-800 rounded leading-tight;
   -webkit-appearance: none;
 }
 
