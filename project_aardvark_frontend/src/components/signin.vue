@@ -1,6 +1,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import store from '@/store'
+import { AxiosResponse } from 'axios'
 
 export default Vue.extend({
   name: 'SignIn',
@@ -23,7 +24,8 @@ export default Vue.extend({
         .then(response => this.signinSuccessful(response))
         .catch(error => this.signinFailed(error))
     },
-    signinSuccessful (response) {
+    signinSuccessful (response: AxiosResponse) {
+      console.log(response)
       if (!response.data.csrf) {
         this.signinFailed(response)
         return
@@ -33,9 +35,10 @@ export default Vue.extend({
       this.error = ''
       this.$router.replace({ name: 'slates-index' })
     },
-    signinFailed (error) {
-      this.error = (error.response && error.response.data && error.response.data.error) || ''
-      store.dispatch('signOut')
+    signinFailed (error: any) {
+      console.log(error)
+      // this.error = (error.response && error.response.data && error.response.data.error) || ''
+      // store.dispatch('signOut')
     },
     checkSignedIn () {
       if (store.state.signedIn) {

@@ -1,20 +1,28 @@
 <script lang="ts">
 import Vue from 'vue'
 import store from '@/store'
+import { Backend, ISlate } from '@/types'
+import { AxiosResponse } from 'axios'
 
-interface ISlate {
-  id: string
-  title: string
+interface IData {
+  slates: ISlate[]
+  newSlate: ISlate
+  error: string
+  editedSlate: ISlate
+}
+
+function getDefaultSlate (): ISlate {
+  return { id: '', title: '' }
 }
 
 export default Vue.extend({
   name: 'SlatesIndex',
-  data: function () {
+  data: function (): IData {
     return {
       slates: [],
-      newSlate: {},
+      newSlate: { id: '', title: '' },
       error: '',
-      editedSlate: {},
+      editedSlate: { id: '', title: '' },
     }
   },
   created () {
@@ -22,14 +30,14 @@ export default Vue.extend({
       this.$router.replace({ name: 'root' })
     } else {
       this.$http.secured.get('/api/v1/slates')
-        .then((response: any) => {
+        .then((response: AxiosResponse) => {
           this.slates = response.data
         })
-        .catch((error: any) => this.setError(error, 'Something went wrong'))
+        .catch((error: Backend.IResponse) => this.setError(error, 'Something went wrong'))
     }
   },
   methods: {
-    setError (error: any, text: any) {
+    setError (error: Backend.IResponse, text: string) {
       this.error = (error.response && error.response.data && error.response.data.errors) || text
     },
     addSlate () {
@@ -40,22 +48,22 @@ export default Vue.extend({
       this.$http.secured.post('/api/v1/slates', { slate: { title: this.newSlate.title } })
         .then(response => {
           this.slates.push(response.data)
-          this.newSlate = {}
+          this.newSlate = getDefaultSlate()
         })
         .catch(error => this.setError(error, 'Cannot create slate'))
     },
-    removeSlate (slate) {
+    removeSlate (slate: ISlate) {
       this.$http.secured.delete(`/api/v1/slates/${slate.id}`)
         .then(response => {
           this.slates.splice(this.slates.indexOf(slate), 1)
         })
         .catch(error => this.setError(error, 'Cannot delete slate'))
     },
-    editSlate (slate) {
+    editSlate (slate: ISlate) {
       this.editedSlate = slate
     },
-    updateSlate (slate) {
-      this.editedSlate = {}
+    updateSlate (slate: ISlate) {
+      this.editedSlate = getDefaultSlate()
       this.$http.secured.patch(`api/v1/slates/${slate.id}`, { slate: { title: slate.title } })
         .catch(error => this.setError(error, 'Cannot update slate'))
     },

@@ -51,7 +51,8 @@ module.exports = {
         loader: 'ts-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
         options: {
-          transpileOnly: true,
+          // transpileOnly: true, // speeds compilation but lose some static type checking
+          appendTsSuffixTo: [/\.vue$/]
         }
       },
       {

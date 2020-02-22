@@ -1,17 +1,27 @@
 <script lang="ts">
 import Vue from 'vue'
 import store from '@/store'
+import { Backend } from '../types'
+
+interface IData {
+  error: string
+}
 
 export default Vue.extend({
   name: 'AppHeader',
+  data: function (): IData {
+    return {
+      error: '',
+    }
+  },
   computed: {
     signedIn () {
       return store.state.signedIn
     },
   },
   methods: {
-    setError (error, text) {
-      this.error = (error.response && error.response.data && error.response.data.errors) || text
+    setError (error: Backend.IResponse, text: string) {
+      this.error = (error.response && error.response.data && error.response.data.error) || text
     },
     signOut () {
       this.$http.secured.delete('/signin')

@@ -23,7 +23,8 @@ module.exports = {
   ],
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue',
+    '@typescript-eslint'
   ],
   // add your custom rules here
   rules: {
@@ -47,6 +48,7 @@ module.exports = {
         "EVENTS",
         "CONTENT"
       ]
-    }]
+    }],
+    "@typescript-eslint/no-unused-vars": [2, {args: 'none'}]
   }
 }
