@@ -1,7 +1,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import store from '@/store'
-import { Backend } from '../types'
+import { Backend } from '@/types'
 
 interface IData {
   error: string
