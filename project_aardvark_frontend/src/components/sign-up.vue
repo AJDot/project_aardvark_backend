@@ -67,6 +67,7 @@ export default Vue.extend({
 
       store.dispatch('signIn', response.data.csrf)
       this.error = ''
+      this.close()
       this.$router.replace({ name: 'slates-index' })
     },
     signUpFailed (error: AxiosResponse | AxiosError) {
@@ -84,74 +85,85 @@ export default Vue.extend({
         }
       }
     },
+    close (): void {
+      this.toggle(this.modalState.id, false)
+    },
+    openSignIn (): void {
+      this.toggle(this.modalState.id, false)
+      this.toggle('signIn', true)
+    },
   },
 })
 </script>
 
 <template>
-  <modal :state="modalState">
-    <div
-      class="max-w-sm m-auto my-8"
-    >
-      <div class="border p-10 border-grey-400 shadow rounded">
-        <h3 class="text-2xl mb-6 text-grey-900">
-          Sign Up
-        </h3>
-        <form @submit.prevent="signUp">
-          <div
-            v-if="error"
-            class="text-red"
-          >
-            {{ error }}
-          </div>
-          <div class="mb-6">
-            <label
-              for="email"
-              class="label"
-            >Email</label>
-            <input
-              id="email"
-              v-model="email"
-              type="email"
-              class="input"
-              placeholder="awesome@email.com"
-            >
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="password"
-              class="label"
-            >Password</label>
-            <input
-              id="password"
-              v-model="password"
-              type="password"
-              class="input"
-            >
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="password-confirmation"
-              class="label"
-            >Password Confirmation</label>
-            <input
-              id="password-confirmation"
-              v-model="passwordConfirmation"
-              type="password"
-              class="input"
-            >
-          </div>
-
-          <button
-            type="submit"
-            class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:br-green-700 block w-full py-4 text-white items-center justify-center"
-          >
-            Sign Up
-          </button>
-        </form>
+  <modal
+    :state="modalState"
+    @close="close"
+  >
+    <template #title>
+      Sign Up
+    </template>
+    <form @submit.prevent="signUp">
+      <div
+        v-if="error"
+        class="text-red"
+      >
+        {{ error }}
       </div>
-    </div>
+      <div class="mb-6">
+        <label
+          for="email"
+          class="label"
+        >Email</label>
+        <input
+          id="email"
+          v-model="email"
+          type="email"
+          class="input"
+          placeholder="awesome@email.com"
+        >
+      </div>
+
+      <div class="mb-6">
+        <label
+          for="password"
+          class="label"
+        >Password</label>
+        <input
+          id="password"
+          v-model="password"
+          type="password"
+          class="input"
+        >
+      </div>
+
+      <div class="mb-6">
+        <label
+          for="password-confirmation"
+          class="label"
+        >Password Confirmation</label>
+        <input
+          id="password-confirmation"
+          v-model="passwordConfirmation"
+          type="password"
+          class="input"
+        >
+      </div>
+
+      <button
+        type="submit"
+        class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:br-green-700 block w-full py-4 text-white items-center justify-center"
+      >
+        Sign Up
+      </button>
+
+      <div class="cta">
+        <a
+          href="#"
+          @click.prevent="openSignIn"
+        >Sign In</a>
+      </div>
+    </form>
   </modal>
 </template>

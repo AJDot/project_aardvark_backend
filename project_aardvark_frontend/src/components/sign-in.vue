@@ -62,6 +62,7 @@ export default Vue.extend({
 
       store.dispatch('signIn', response.data.csrf)
       this.error = ''
+      this.close()
       this.$router.replace({ name: 'slates-index' })
     },
     signInFailed (error: AxiosResponse | AxiosError) {
@@ -74,11 +75,18 @@ export default Vue.extend({
     },
     checkSignedIn () {
       if (store.state.signedIn) {
-        this.$router.replace({ name: 'slates-index' })
+        const routeName = 'slates-index'
+        if (this.$route.name !== routeName) {
+          this.$router.replace({ name: routeName })
+        }
       }
     },
-    cancel (): void {
+    close (): void {
       this.toggle(this.modalState.id)
+    },
+    openSignUp (): void {
+      this.toggle(this.modalState.id, false)
+      this.toggle('signUp', true)
     },
   },
 })
@@ -87,7 +95,7 @@ export default Vue.extend({
 <template>
   <modal
     :state="modalState"
-    @cancel="cancel"
+    @close="close"
   >
     <template #title>
       Sign In
@@ -132,6 +140,13 @@ export default Vue.extend({
       >
         Sign In
       </button>
+
+      <div class="cta">
+        <a
+          href="#"
+          @click.prevent="openSignUp"
+        >Sign Up</a>
+      </div>
     </form>
   </modal>
 </template>

@@ -1,0 +1,15 @@
+h1 {
+  @apply text-5xl text-center;
+}
+
+p {
+  @apply text-base;
+}
+
+a {
+  @apply text-gray-700 ;
+
+  &:hover {
+    @apply underline;
+  }
+}

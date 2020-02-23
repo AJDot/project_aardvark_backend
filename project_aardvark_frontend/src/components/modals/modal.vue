@@ -25,8 +25,8 @@ export default Vue.extend({
     },
   },
   methods: {
-    cancel (): void {
-      this.$emit('cancel')
+    close (): void {
+      this.$emit('close')
     },
   },
 })
@@ -40,7 +40,7 @@ export default Vue.extend({
   >
     <aside
       class="v-modal fixed w-full h-full flex justify-center mask bg-mask inset-0"
-      @click.self="cancel"
+      @click.self="close"
     >
       <div class="v-modal-body self-center">
         <div class="v-modal-container relative border p-10 border-grey-400 shadow rounded bg-white">
@@ -50,6 +50,7 @@ export default Vue.extend({
           <button
             type="button"
             class="absolute top-0 right-0 mx-3 py-1"
+            @click="close"
           >
             <span class="sr-only">Dismiss Modal</span>
             x

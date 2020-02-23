@@ -41,7 +41,7 @@ export default Vue.extend({
       this.$http.secured.delete('/sign_in')
         .then(response => {
           store.dispatch('signOut')
-          this.$router.replace({ name: 'root' })
+          this.$router.replace({ name: 'home' })
         })
         .catch(error => this.setError(error, 'Cannot sign out'))
     },
@@ -53,7 +53,7 @@ export default Vue.extend({
   <header class="bg-gray-500 py-4">
     <div class="container m-auto flex flex-wrap items-center justify-end">
       <div class="flex-1 flex items-center">
-        <router-link :to="{name: 'root'}">
+        <router-link :to="{name: 'home'}">
           Project Aardvark
         </router-link>
       </div>

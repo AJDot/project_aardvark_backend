@@ -27,7 +27,7 @@ export default Vue.extend({
   },
   created () {
     if (!store.state.signedIn) {
-      this.$router.replace({ name: 'root' })
+      this.$router.replace({ name: 'home' })
     } else {
       this.$http.secured.get('/api/v1/slates')
         .then((response: AxiosResponse) => {

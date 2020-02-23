@@ -1,0 +1,9 @@
+.hero {
+  h1 {
+    @apply text-5xl text-center font-bold;
+  }
+
+  p {
+    @apply text-xl text-center;
+  }
+}
