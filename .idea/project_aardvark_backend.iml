@@ -18,7 +18,9 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/log" />
+      <excludeFolder url="file://$MODULE_DIR$/project_aardvark_frontend/node_modules" />
     </content>
+    <content url="file://$MODULE_DIR$/project_aardvark_frontend/node_modules" />
     <orderEntry type="jdk" jdkName="rbenv: 2.7.0" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="actioncable (v6.0.2.1, rbenv: 2.7.0) [gem]" level="application" />

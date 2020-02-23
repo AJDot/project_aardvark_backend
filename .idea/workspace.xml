@@ -2,22 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/link.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/modal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/guid.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces/basic.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces/iModal.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/store/mappers/mapper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/store/modules/modals.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/.stylelintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/styles/animations.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project_aardvark_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project_aardvark_backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/app-header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/app-header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/sign-in.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/sign-in.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/sign-up.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/sign-up.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/build/webpack.base.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/modal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/styles/input.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,15 +71,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/project_aardvark_frontend/src/helpers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/project_aardvark_frontend/node_modules/stylelint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/project_aardvark_frontend/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -92,6 +94,7 @@
       <recent name="$PROJECT_DIR$/project_aardvark_frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/styles" />
       <recent name="$PROJECT_DIR$/project_aardvark_frontend/src" />
       <recent name="$PROJECT_DIR$/project_aardvark_frontend" />
     </key>
@@ -228,14 +231,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2795" y="381" width="800" height="733" key="#Intentions" timestamp="1582480540541">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2795" y="381" width="800" height="733" key="#Intentions/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582480540541" />
     <state x="3008" y="439" width="374" height="566" key="#com.intellij.ide.util.MemberChooser" timestamp="1582403706555">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="3008" y="439" width="374" height="566" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582403706555" />
-    <state x="2933" y="469" width="524" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581986496303">
+    <state x="2933" y="469" width="524" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582479639867">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2933" y="469" width="524" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581986496303" />
+    <state x="2933" y="469" width="524" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582479639867" />
     <state width="2514" height="381" key="GridCell.Tab.0.bottom" timestamp="1582396955296">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -268,14 +275,14 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state width="2514" height="398" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582387464316" />
-    <state x="4568" y="71" width="1538" height="907" key="SettingsEditor" timestamp="1582406517082">
+    <state x="4568" y="71" width="1538" height="907" key="SettingsEditor" timestamp="1582482819444">
       <screen x="4480" y="0" width="1920" height="1080" />
     </state>
-    <state x="4568" y="71" width="1538" height="907" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582406517082" />
-    <state x="2258" y="147" width="2013" height="1141" key="find.popup" timestamp="1582409691322">
+    <state x="4568" y="71" width="1538" height="907" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582482819444" />
+    <state x="2258" y="147" width="2013" height="1141" key="find.popup" timestamp="1582483900706">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2258" y="147" width="2013" height="1141" key="find.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582409691322" />
+    <state x="2258" y="147" width="2013" height="1141" key="find.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582483900706" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1582390260793">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -284,10 +291,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2864" y="336" width="672" height="677" key="run.anything.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964476626" />
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1582410344364">
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1582486052628">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582410344364" />
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582486052628" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/project_aardvark_backend@Development__project_aardvark_backend.rcov" NAME="Development: project_aardvark_backend Coverage Results" MODIFIED="1582387220688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_aardvark_backend" />

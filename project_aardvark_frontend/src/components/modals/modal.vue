@@ -36,7 +36,7 @@ export default Vue.extend({
   <transition
     v-if="state.isOpen"
     appear
-    name="modal"
+    name="v-modal"
   >
     <aside
       class="v-modal fixed w-full h-full flex justify-center mask bg-mask inset-0"

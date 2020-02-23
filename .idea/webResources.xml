@@ -9,6 +9,13 @@
           </resourceRoots>
         </entryData>
       </entry>
+      <entry url="file://$PROJECT_DIR$/project_aardvark_frontend/node_modules">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/project_aardvark_frontend/node_modules" />
+          </resourceRoots>
+        </entryData>
+      </entry>
     </contentEntries>
   </component>
 </project>
