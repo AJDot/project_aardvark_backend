@@ -1,0 +1,32 @@
+.v-modal {
+  &-body {
+    transition: transform 0.2s ease;
+  }
+
+  &-enter {
+    opacity: 0;
+
+    & .v-modal-body {
+      transform: scale(1.1);
+    }
+
+    &-active {
+      transition: opacity 0.2s ease;
+    }
+  }
+
+  &-leave {
+    &-active {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+
+      & .v-modal-body {
+        transform: scale(1.1);
+      }
+    }
+
+    &-to {
+      opacity: 0;
+    }
+  }
+}

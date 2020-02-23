@@ -1,5 +1,5 @@
 @import 'tailwindcss/base.css';
 @import 'tailwindcss/components.css';
 @import 'tailwindcss/utilities.css';
-@import 'src/styles/input';
-@import 'src/styles/animations';
+@import './input.css';
+@import './animations.css';

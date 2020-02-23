@@ -120,12 +120,9 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    // new MiniCssExtractPlugin({
-    //   filename: "style.css",
-    // }),
     new StylelintPlugin({
       context: 'src',
-      files: '/**/*.scss',
+      files: '**/*.css',
     }),
   ],
 }

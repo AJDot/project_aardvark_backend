@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/.stylelintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/styles/animations.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project_aardvark_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project_aardvark_backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/build/webpack.base.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/modal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/styles/input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +66,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/project_aardvark_frontend/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -221,6 +205,8 @@
       <workItem from="1582111680818" duration="3086000" />
       <workItem from="1582160013185" duration="13748000" />
       <workItem from="1582383188835" duration="27232000" />
+      <workItem from="1582487209079" duration="326000" />
+      <workItem from="1582487548891" duration="992000" />
     </task>
     <servers />
   </component>
@@ -235,6 +221,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2795" y="381" width="800" height="733" key="#Intentions/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582480540541" />
+    <state x="2795" y="381" width="800" height="681" key="#Stylelint" timestamp="1582487757753">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2795" y="381" width="800" height="681" key="#Stylelint/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487757753" />
     <state x="3008" y="439" width="374" height="566" key="#com.intellij.ide.util.MemberChooser" timestamp="1582403706555">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -243,42 +233,42 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2933" y="469" width="524" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582479639867" />
-    <state width="2514" height="381" key="GridCell.Tab.0.bottom" timestamp="1582396955296">
+    <state width="2514" height="398" key="GridCell.Tab.0.bottom" timestamp="1582487552435">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="381" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582396955296" />
-    <state width="2514" height="381" key="GridCell.Tab.0.center" timestamp="1582396955296">
+    <state width="2514" height="398" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487552435" />
+    <state width="2514" height="398" key="GridCell.Tab.0.center" timestamp="1582487552435">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="381" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582396955296" />
-    <state width="2514" height="381" key="GridCell.Tab.0.left" timestamp="1582396955296">
+    <state width="2514" height="398" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487552435" />
+    <state width="2514" height="398" key="GridCell.Tab.0.left" timestamp="1582487552435">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="381" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582396955296" />
-    <state width="2514" height="381" key="GridCell.Tab.0.right" timestamp="1582396955296">
+    <state width="2514" height="398" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487552435" />
+    <state width="2514" height="398" key="GridCell.Tab.0.right" timestamp="1582487552435">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="381" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582396955296" />
-    <state width="2514" height="398" key="GridCell.Tab.1.bottom" timestamp="1582387464316">
+    <state width="2514" height="398" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487552435" />
+    <state width="2514" height="398" key="GridCell.Tab.1.bottom" timestamp="1582487552436">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="398" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582387464316" />
-    <state width="2514" height="398" key="GridCell.Tab.1.center" timestamp="1582387464316">
+    <state width="2514" height="398" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487552436" />
+    <state width="2514" height="398" key="GridCell.Tab.1.center" timestamp="1582487552436">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="398" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582387464316" />
-    <state width="2514" height="398" key="GridCell.Tab.1.left" timestamp="1582387464316">
+    <state width="2514" height="398" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487552436" />
+    <state width="2514" height="398" key="GridCell.Tab.1.left" timestamp="1582487552436">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="398" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582387464316" />
-    <state width="2514" height="398" key="GridCell.Tab.1.right" timestamp="1582387464316">
+    <state width="2514" height="398" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487552436" />
+    <state width="2514" height="398" key="GridCell.Tab.1.right" timestamp="1582487552436">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="2514" height="398" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582387464316" />
-    <state x="4568" y="71" width="1538" height="907" key="SettingsEditor" timestamp="1582482819444">
+    <state width="2514" height="398" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487552436" />
+    <state x="4568" y="71" width="1538" height="907" key="SettingsEditor" timestamp="1582487534716">
       <screen x="4480" y="0" width="1920" height="1080" />
     </state>
-    <state x="4568" y="71" width="1538" height="907" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582482819444" />
+    <state x="4568" y="71" width="1538" height="907" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487534716" />
     <state x="2258" y="147" width="2013" height="1141" key="find.popup" timestamp="1582483900706">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -291,12 +281,12 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2864" y="336" width="672" height="677" key="run.anything.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1581964476626" />
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1582486052628">
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1582486697394">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582486052628" />
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582486697394" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project_aardvark_backend@Development__project_aardvark_backend.rcov" NAME="Development: project_aardvark_backend Coverage Results" MODIFIED="1582387220688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_aardvark_backend" />
+    <SUITE FILE_PATH="coverage/project_aardvark_backend@Development__project_aardvark_backend.rcov" NAME="Development: project_aardvark_backend Coverage Results" MODIFIED="1582487549897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_aardvark_backend" />
   </component>
 </project>
