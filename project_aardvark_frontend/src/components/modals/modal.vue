@@ -2,11 +2,20 @@
 import Vue from 'vue'
 import { Modal } from '@/interfaces/iModal'
 import { IModalState } from '@/store/modules/modals'
+import mapper from '@/store/mappers/mapper'
+import { Modals } from '@/modules/modals'
+
+const modalStore = mapper('modals', {
+  state: {},
+  getters: { find: 'find' },
+  mutations: { create: 'create' },
+  actions: {},
+})
 
 export default Vue.extend({
   props: {
-    state: {
-      type: Object as () => IModalState,
+    id: {
+      type: Number as () => Modals.Id,
       default: null,
     },
   },
@@ -14,6 +23,13 @@ export default Vue.extend({
     return {}
   },
   computed: {
+    ...modalStore.computed,
+    state (): IModalState {
+      const state = this.find(this.id)
+      if (state) return state
+      this.create({ id: this.id })
+      return this.find(this.id)
+    },
     status (): typeof Modal.Status {
       return Modal.Status
     },
@@ -25,6 +41,7 @@ export default Vue.extend({
     },
   },
   methods: {
+    ...modalStore.methods,
     close (): void {
       this.$emit('close')
     },

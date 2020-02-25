@@ -1,11 +1,11 @@
 <script lang="ts">
 import Vue from 'vue'
 import mapper from '@/store/mappers/mapper'
-import { IModalState } from '@/store/modules/modals'
+import { Modals } from '@/modules/modals'
 
 const modalStore = mapper('modals', {
   state: {},
-  getters: { findByName: 'findByName' },
+  getters: { find: 'find' },
   mutations: { toggle: 'toggle', create: 'create' },
   actions: {},
 })
@@ -13,9 +13,9 @@ const modalStore = mapper('modals', {
 export default Vue.extend({
   name: 'ModalLink',
   props: {
-    to: {
-      type: Object as () => { name: string },
-      required: true,
+    id: {
+      type: Number as () => Modals.Id,
+      default: null,
     },
   },
   data: function () {
@@ -23,12 +23,10 @@ export default Vue.extend({
   },
   computed: {
     ...modalStore.computed,
-    modalState (): IModalState {
-      const state = this.findByName(this.to.name)
-      if (state) return state
-      this.create(this.to.name)
-      return this.findByName(this.to.name)
-    },
+  },
+  created () {
+    const state = this.find(this.id)
+    if (!state) this.create(this.id)
   },
   methods: {
     ...modalStore.methods,
@@ -37,7 +35,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <button @click="toggle(modalState.id)">
-    <slot>{{ to.name }}</slot>
+  <button @click="toggle({id: id})">
+    <slot>{{ id }}</slot>
   </button>
 </template>

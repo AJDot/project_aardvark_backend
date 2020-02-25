@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import { Module } from 'vuex'
 import { Hash } from '@/interfaces/basic'
-import Guid from '@/helpers/guid'
 import { Modal } from '@/interfaces/iModal'
+import { InstanceHelper } from '@/helpers/instanceHelper'
+import { Modals } from '@/modules/modals'
 
 interface IState {
   states: { [key: string]: IModalState }
 }
 
 export interface IModalState {
-  id: string
-  name: string
+  id: Modals.Id
   isOpen: boolean
   status: Modal.Status
 }
@@ -20,46 +20,44 @@ const state: IState = {
 }
 
 interface IGetters<S = IState> extends Hash {
-  find (state: S): (id: string) => IModalState | undefined
-
-  findByName (state: S): (id: string) => IModalState | undefined
-
-  findByIdOrName (state: S, getters: IGetters<S>): (id: string) => IModalState | undefined
+  find (state: S): (id: Modals.Id) => IModalState | undefined
 }
 
 const getters: IGetters = {
-  find: (state) => (id: string) => {
+  find: (state) => (id: Modals.Id) => {
     return state.states[id]
-  },
-  findByName: (state) => (name: string) => {
-    return Object.values(state.states).find(s => s.name === name)
-  },
-  findByIdOrName: (state, getters) => (idOrName: string) => {
-    return getters.find(state)(idOrName) || getters.findByName(state)(idOrName)
   },
 }
 
 const actions = {}
 
 interface IMutations<S = IState> extends Hash {
-  toggle (state: S, idOrName: string): IModalState
+  open (state: S, { id }: { id: Modals.Id }): void
 
-  create (state: S, name: string): IModalState
+  close (state: S, { id }: { id: Modals.Id }): void
+
+  toggle (state: S, { id, force }: { id: Modals.Id, force?: boolean }): void
+
+  create (state: S, { id }: { id: Modals.Id }): void
 }
 
 const mutations: IMutations = {
-  create (state, name: string): IModalState {
-    const modalState = { id: Guid.create(), isOpen: false, name: name, status: Modal.Status.None }
+  create (state, { id }: { id: Modals.Id }): void {
+    const modalState = { id: id, isOpen: false, status: Modal.Status.None }
     Vue.set(state.states, modalState.id, modalState)
-    return modalState
   },
-  toggle (state: IState, idOrName: string): IModalState {
-    let modalState = getters.findByIdOrName(state, getters)(idOrName)
-    if (!modalState) {
-      modalState = this.create(state, idOrName)
+  open (state: IState, { id }: { id: Modals.Id }): void {
+    this.commit('modals/toggle', { id: id, force: true })
+  },
+  close (state: IState, { id }: { id: Modals.Id }): void {
+    this.commit('modals/toggle', { id: id, force: false })
+  },
+  toggle (state: IState, { id, force }: { id: Modals.Id, force?: boolean }): void {
+    const modalState = getters.find(state)(id)
+    if (modalState) {
+      if (InstanceHelper.isBoolean(force)) modalState.isOpen = force
+      else modalState.isOpen = !modalState.isOpen
     }
-    modalState.isOpen = !modalState.isOpen
-    return modalState
   },
 }
 

@@ -6,11 +6,13 @@ import { TAxios } from '@/typeChecks/axios'
 import Modal from '@/components/modals/modal.vue'
 import mapper from '@/store/mappers/mapper'
 import { IModalState } from '@/store/modules/modals'
+import { Routes } from '@/router/routes'
+import { Modals } from '@/modules/modals'
 
 const modalStore = mapper('modals', {
   state: {},
-  getters: { findByName: 'findByName' },
-  mutations: { toggle: 'toggle', create: 'create' },
+  getters: { find: 'find' },
+  mutations: { open: 'open', close: 'close', create: 'create' },
   actions: {},
 })
 
@@ -19,26 +21,21 @@ export default Vue.extend({
   components: {
     Modal,
   },
-  props: {
-    from: {
-      type: Object as () => { name: string },
-      required: true,
-    },
-  },
   data: function () {
     return {
       email: '',
       password: '',
       error: '',
+      id: Modals.Id.SignIn,
     }
   },
   computed: {
     ...modalStore.computed,
     modalState (): IModalState {
-      const state = this.findByName(this.from.name)
+      const state = this.find(this.id)
       if (state) return state
-      this.create(this.from.name)
-      return this.findByName(this.from.name)
+      this.create({ id: this.id })
+      return this.find(this.id)
     },
   },
   created () {
@@ -50,7 +47,10 @@ export default Vue.extend({
   methods: {
     ...modalStore.methods,
     signIn () {
-      this.$http.plain.post('/sign_in', { email: this.email, password: this.password })
+      this.$http.plain.post(Routes.Path.SignIn, {
+        email: this.email,
+        password: this.password,
+      })
         .then(response => this.signInSuccessful(response))
         .catch(error => this.signInFailed(error))
     },
@@ -62,8 +62,8 @@ export default Vue.extend({
 
       store.dispatch('signIn', response.data.csrf)
       this.error = ''
-      this.close()
-      this.$router.replace({ name: 'slates-index' })
+      this.closeModal()
+      this.$router.replace({ name: Routes.Name.Slates })
     },
     signInFailed (error: AxiosResponse | AxiosError) {
       if (TAxios.isError(error)) {
@@ -75,18 +75,18 @@ export default Vue.extend({
     },
     checkSignedIn () {
       if (store.state.signedIn) {
-        const routeName = 'slates-index'
+        const routeName = Routes.Name.Slates
         if (this.$route.name !== routeName) {
           this.$router.replace({ name: routeName })
         }
       }
     },
-    close (): void {
-      this.toggle(this.modalState.id)
+    closeModal (): void {
+      this.close({ id: this.id })
     },
     openSignUp (): void {
-      this.toggle(this.modalState.id, false)
-      this.toggle('signUp', true)
+      this.close({ id: this.id })
+      this.open({ id: Modals.Id.SignUp })
     },
   },
 })
@@ -94,8 +94,8 @@ export default Vue.extend({
 
 <template>
   <modal
-    :state="modalState"
-    @close="close"
+    :id="id"
+    @close="closeModal"
   >
     <template #title>
       Sign In

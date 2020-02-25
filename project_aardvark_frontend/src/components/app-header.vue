@@ -5,9 +5,13 @@ import { Backend } from '@/types'
 import ModalLink from '@/components/modals/link.vue'
 import SignUp from '@/components/sign-up.vue'
 import SignIn from '@/components/sign-in.vue'
+import { Modals } from '@/modules/modals'
+import { Routes } from '@/router/routes'
 
 interface IData {
   error: string
+  Modals: typeof Modals,
+  Routes: typeof Routes,
 }
 
 export default Vue.extend({
@@ -26,6 +30,8 @@ export default Vue.extend({
   data: function (): IData {
     return {
       error: '',
+      Modals,
+      Routes,
     }
   },
   computed: {
@@ -60,21 +66,21 @@ export default Vue.extend({
       <div>
         <modal-link
           v-if="!signedIn"
-          :to="{name: 'signIn'}"
+          :id="Modals.Id.SignIn"
           class="link-gray px-2 no-underline"
         >
           Sign In
         </modal-link>
         <modal-link
           v-if="!signedIn"
-          :to="{name: 'signUp'}"
+          :id="Modals.Id.SignUp"
           class="link-gray px-2 no-underline"
         >
           Sign Up
         </modal-link>
         <router-link
           v-if="signedIn"
-          :to="{name: 'slates-index'}"
+          :to="{name: Routes.Name.Slates}"
           class="link-gray px-2 no-underline"
         >
           Slates
@@ -89,7 +95,7 @@ export default Vue.extend({
         </a>
       </div>
     </div>
-    <sign-up :from="{name: 'signUp'}" />
-    <sign-in :from="{name: 'signIn'}" />
+    <sign-up />
+    <sign-in />
   </header>
 </template>
