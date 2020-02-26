@@ -1,33 +1,53 @@
 <script lang="ts">
 import Vue from 'vue'
 import store from '@/store'
-import { Backend, ISlate } from '@/types'
+import { Backend } from '@/types/backend'
+import { ISlate } from '@/types/slate'
 import { AxiosResponse } from 'axios'
+import { Routes } from '@/router/routes'
+import mapper from '@/store/mappers/mapper'
+import { IModalState } from '@/store/modules/modals'
+import { Modals } from '@/modules/modals'
+import NewSlate from './new.vue'
+
+const modalStore = mapper('modals', {
+  state: {},
+  getters: { find: 'find' },
+  mutations: { open: 'open', close: 'close', create: 'create' },
+  actions: {},
+})
 
 interface IData {
   slates: ISlate[]
-  newSlate: ISlate
   error: string
   editedSlate: ISlate
 }
 
-function getDefaultSlate (): ISlate {
-  return { id: '', title: '' }
-}
-
 export default Vue.extend({
   name: 'SlatesIndex',
+  components: {
+    NewSlate,
+  },
   data: function (): IData {
     return {
       slates: [],
-      newSlate: { id: '', title: '' },
       error: '',
       editedSlate: { id: '', title: '' },
     }
   },
+  computed: {
+    ...modalStore.computed,
+    newSlateModalState (): IModalState {
+      const id = Modals.Id.NewSlate
+      const state = this.find(id)
+      if (state) return state
+      this.create({ id: id })
+      return this.find(id)
+    },
+  },
   created () {
     if (!store.state.signedIn) {
-      this.$router.replace({ name: 'home' })
+      this.$router.replace({ name: Routes.Name.Home })
     } else {
       this.$http.secured.get('/api/v1/slates')
         .then((response: AxiosResponse) => {
@@ -37,23 +57,26 @@ export default Vue.extend({
     }
   },
   methods: {
+    ...modalStore.methods,
     setError (error: Backend.IResponse, text: string) {
       this.error = (error.response && error.response.data && error.response.data.errors) || text
     },
-    addSlate () {
-      const value = this.newSlate
-      if (!value) {
+    newSlate (): void {
+      this.open({ id: this.newSlateModalState.id })
+    },
+    addSlate (slate: ISlate): void {
+      if (!slate) {
         return
       }
-      this.$http.secured.post('/api/v1/slates', { slate: { title: this.newSlate.title } })
+      console.log(slate)
+      this.$http.secured.post(Routes.apiPath(Routes.Path.Slates), { slate: { title: slate.title } })
         .then(response => {
           this.slates.push(response.data)
-          this.newSlate = getDefaultSlate()
         })
         .catch(error => this.setError(error, 'Cannot create slate'))
     },
     removeSlate (slate: ISlate) {
-      this.$http.secured.delete(`/api/v1/slates/${slate.id}`)
+      this.$http.secured.delete(Routes.apiPath(Routes.Path.Slate, { id: slate.id }))
         .then(response => {
           this.slates.splice(this.slates.indexOf(slate), 1)
         })
@@ -62,11 +85,11 @@ export default Vue.extend({
     editSlate (slate: ISlate) {
       this.editedSlate = slate
     },
-    updateSlate (slate: ISlate) {
-      this.editedSlate = getDefaultSlate()
-      this.$http.secured.patch(`api/v1/slates/${slate.id}`, { slate: { title: slate.title } })
-        .catch(error => this.setError(error, 'Cannot update slate'))
-    },
+    // updateSlate (slate: ISlate) {
+    //   this.editedSlate = getDefaultSlate()
+    //   this.$http.secured.patch(Routes.apiPath(Routes.Path.Slate, { id: slate.id, title: slate.title }))
+    //     .catch(error => this.setError(error, 'Cannot update slate'))
+    // },
   },
 })
 </script>
@@ -80,28 +103,11 @@ export default Vue.extend({
       {{ error }}
     </div>
     <h3 class="font-mono font-regular text-3xl mb-4">
-      Add Slate
+      Slates
     </h3>
-    <form @submit.prevent="addSlate">
-      <div class="mb-6">
-        <input
-          v-model="newSlate.title"
-          type="text"
-          class="input"
-          autofocus
-          autocomplete="off"
-          placeholder="Enter slate title"
-        >
-        <input
-          type="submit"
-          value="Add Slate"
-          class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green hover:bg-green-700 block w-full py-4 text-white item-center justify-center"
-        >
-      </div>
-    </form>
-
-    <hr class="border border-gray-400 my-6">
-
+    <button @click="newSlate">
+      Add Slate
+    </button>
     <ul class="list-reset mt-4">
       <li
         v-for="slate in slates"
@@ -127,24 +133,9 @@ export default Vue.extend({
             Delete
           </button>
         </div>
-
-        <div v-if="slate === editedSlate">
-          <form @submit.prevent="updateSlate(slate)">
-            <div class="mb-6 p-4 bh-white rounded-border border-gray-400 mt-4">
-              <input
-                v-model="slate.title"
-                type="text"
-                class="input"
-              >
-              <input
-                type="submit"
-                value="Update"
-                class="my-2 bg-transparent text-sm hover:bg-blue hover:text-white text-blue border-blue no-underline font-bold py-2 px-4 rounded cursor-pointer"
-              >
-            </div>
-          </form>
-        </div>
       </li>
     </ul>
+
+    <new-slate @add="addSlate" />
   </div>
 </template>

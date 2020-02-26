@@ -1,7 +1,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import store from '@/store'
-import { Backend } from '@/types'
+import { Backend } from '@/types/backend'
 import ModalLink from '@/components/modals/link.vue'
 import SignUp from '@/components/sign-up.vue'
 import SignIn from '@/components/sign-in.vue'

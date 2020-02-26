@@ -3,5 +3,6 @@ export module Modals {
     None,
     SignUp,
     SignIn,
+    NewSlate,
   }
 }

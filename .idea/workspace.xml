@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/arrayHelper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/instanceHelper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/stringHelper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/modules/modals.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/router/routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/new.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/models/model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/models/slate.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/types/model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/types/slate.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/app-header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/app-header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/link.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/link.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/modals/modal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/sign-in.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/sign-in.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/sign-up.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/sign-up.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/store/modules/modals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/store/modules/modals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/stringHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/stringHelper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/modules/modals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/modules/modals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/router/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/router/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/types/backend.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project_aardvark_frontend/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project_aardvark_frontend/src/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -83,21 +82,21 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/project_aardvark_frontend/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src" />
-      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/styles" />
-      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/helpers" />
-      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces" />
-      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/store" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/styles" />
       <recent name="$PROJECT_DIR$/project_aardvark_frontend/src" />
       <recent name="$PROJECT_DIR$/project_aardvark_frontend" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/models" />
+      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src" />
+      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/styles" />
+      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/helpers" />
+      <recent name="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -205,6 +204,18 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -227,7 +238,14 @@
       <workItem from="1582489084174" duration="3433000" />
       <workItem from="1582587435986" duration="289000" />
       <workItem from="1582587835660" duration="417000" />
-      <workItem from="1582588261573" duration="5195000" />
+      <workItem from="1582588261573" duration="6854000" />
+      <workItem from="1582676421725" duration="685000" />
+      <workItem from="1582677117282" duration="47000" />
+      <workItem from="1582677175310" duration="103000" />
+      <workItem from="1582677289277" duration="173000" />
+      <workItem from="1582677472474" duration="21000" />
+      <workItem from="1582677503804" duration="328000" />
+      <workItem from="1582677841623" duration="3928000" />
     </task>
     <servers />
   </component>
@@ -250,14 +268,18 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2795" y="381" width="800" height="681" key="#Stylelint/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582487757753" />
+    <state x="2857" y="512" width="676" height="420" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582679491398">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2857" y="512" width="676" height="420" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582679491398" />
     <state x="5241" y="303" width="424" height="588" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1582489307961">
       <screen x="4480" y="0" width="1920" height="1080" />
     </state>
     <state x="5241" y="303" width="424" height="588" key="#com.intellij.ide.macro.MacrosDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582489307961" />
-    <state x="3008" y="439" width="374" height="566" key="#com.intellij.ide.util.MemberChooser" timestamp="1582403706555">
+    <state x="3008" y="439" width="374" height="566" key="#com.intellij.ide.util.MemberChooser" timestamp="1582678684185">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="3008" y="439" width="374" height="566" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582403706555" />
+    <state x="3008" y="439" width="374" height="566" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582678684185" />
     <state x="2933" y="469" width="524" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582587939388">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -266,46 +288,58 @@
       <screen x="4480" y="0" width="1920" height="1080" />
     </state>
     <state x="4786" y="286" width="1345" height="618" key="#com.intellij.tools.ToolEditorDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582489320603" />
-    <state width="2514" height="398" key="GridCell.Tab.0.bottom" timestamp="1582492365259">
-      <screen x="1920" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2514" height="398" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582492365259" />
-    <state width="2514" height="398" key="GridCell.Tab.0.center" timestamp="1582492365258">
-      <screen x="1920" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2514" height="398" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582492365258" />
-    <state width="2514" height="398" key="GridCell.Tab.0.left" timestamp="1582492365258">
-      <screen x="1920" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2514" height="398" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582492365258" />
-    <state width="2514" height="398" key="GridCell.Tab.0.right" timestamp="1582492365259">
-      <screen x="1920" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2514" height="398" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582492365259" />
-    <state width="2514" height="398" key="GridCell.Tab.1.bottom" timestamp="1582492365259">
-      <screen x="1920" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2514" height="398" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582492365259" />
-    <state width="2514" height="398" key="GridCell.Tab.1.center" timestamp="1582492365259">
-      <screen x="1920" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2514" height="398" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582492365259" />
-    <state width="2514" height="398" key="GridCell.Tab.1.left" timestamp="1582492365259">
-      <screen x="1920" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2514" height="398" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582492365259" />
-    <state width="2514" height="398" key="GridCell.Tab.1.right" timestamp="1582492365259">
-      <screen x="1920" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2514" height="398" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582492365259" />
-    <state x="4632" y="56" width="1538" height="907" key="SettingsEditor" timestamp="1582588313182">
+    <state x="5184" y="267" width="424" height="488" key="FileChooserDialogImpl" timestamp="1582675273472">
       <screen x="4480" y="0" width="1920" height="1080" />
     </state>
-    <state x="4632" y="56" width="1538" height="907" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582588313182" />
+    <state x="5184" y="267" width="424" height="488" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582675273472" />
+    <state width="2514" height="397" key="GridCell.Tab.0.bottom" timestamp="1582676754382">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="397" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582676754382" />
+    <state width="2514" height="397" key="GridCell.Tab.0.center" timestamp="1582676754382">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="397" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582676754382" />
+    <state width="2514" height="397" key="GridCell.Tab.0.left" timestamp="1582676754381">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="397" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582676754381" />
+    <state width="2514" height="397" key="GridCell.Tab.0.right" timestamp="1582676754382">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="397" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582676754382" />
+    <state width="2514" height="397" key="GridCell.Tab.1.bottom" timestamp="1582676754382">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="397" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582676754382" />
+    <state width="2514" height="397" key="GridCell.Tab.1.center" timestamp="1582676754382">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="397" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582676754382" />
+    <state width="2514" height="397" key="GridCell.Tab.1.left" timestamp="1582676754382">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="397" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582676754382" />
+    <state width="2514" height="397" key="GridCell.Tab.1.right" timestamp="1582676754382">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="397" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582676754382" />
+    <state x="4632" y="56" width="1538" height="907" key="SettingsEditor" timestamp="1582678133114">
+      <screen x="4480" y="0" width="1920" height="1080" />
+    </state>
+    <state x="4632" y="56" width="1538" height="907" key="SettingsEditor/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582678133114" />
     <state x="2020" y="100" width="2360" height="1240" key="VCS.FileHistoryDialog" timestamp="1582491007549">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2020" y="100" width="2360" height="1240" key="VCS.FileHistoryDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582491007549" />
+    <state x="2924" y="566" width="552" height="311" key="cloudConfig.PluginsDialog" timestamp="1582677273981">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2924" y="566" width="552" height="311" key="cloudConfig.PluginsDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582677273981" />
+    <state x="2958" y="566" width="474" height="311" key="cloudConfig.SelfSettingsDialog" timestamp="1582677317725">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2958" y="566" width="474" height="311" key="cloudConfig.SelfSettingsDialog/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582677317725" />
     <state x="2979" y="358" width="432" height="727" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582590744346">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -322,12 +356,12 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2864" y="336" width="672" height="677" key="run.anything.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582489488930" />
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1582593290747">
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1582681614761">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582593290747" />
+    <state x="2863" y="329" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.2560.1440/4480.0.1920.1080@1920.0.2560.1440" timestamp="1582681614761" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project_aardvark_backend@Development__project_aardvark_backend.rcov" NAME="Development: project_aardvark_backend Coverage Results" MODIFIED="1582591066181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_aardvark_backend" />
+    <SUITE FILE_PATH="coverage/project_aardvark_backend@Development__project_aardvark_backend.rcov" NAME="Development: project_aardvark_backend Coverage Results" MODIFIED="1582676753394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="project_aardvark_backend" />
   </component>
 </project>

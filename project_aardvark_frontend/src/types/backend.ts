@@ -5,11 +5,3 @@ export namespace Backend {
     response: AxiosResponse
   }
 }
-
-export interface IModel {
-  id: string
-}
-
-export interface ISlate extends IModel {
-  title: string
-}
