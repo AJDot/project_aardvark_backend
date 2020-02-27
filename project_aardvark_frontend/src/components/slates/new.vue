@@ -31,16 +31,19 @@ export default Vue.extend({
   },
   methods: {
     ...modalStore.methods,
-    addSlate () {
+    addSlate (): void {
       this.$emit('add', this.newSlate)
-      this.newSlate = this.getDefaultSlate()
-      this.closeModal()
+      this.reset()
     },
     getDefaultSlate (): ISlate {
       return new Slate()
     },
     closeModal (): void {
       this.close({ id: this.id })
+    },
+    reset (): void {
+      this.newSlate = this.getDefaultSlate()
+      this.closeModal()
     },
   },
 })
@@ -49,7 +52,7 @@ export default Vue.extend({
 <template>
   <modal
     :id="id"
-    @close="closeModal"
+    @close="reset"
   >
     <form @submit.prevent="addSlate">
       <div class="mb-6">

@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa5a8ab0-5d57-46a3-b103-cce8ab07692d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/edit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/directives/vFocus.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/vue/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/app-header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/app-header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/new.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/components/slates/new.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/arrayHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/arrayHelper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/stringHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/helpers/stringHelper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces/basic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces/basic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/models/model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/models/model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/models/slate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/models/slate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/modules/modals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/modules/modals.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/types/backend.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces/backend.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/types/model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces/model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_aardvark_frontend/src/types/slate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project_aardvark_frontend/src/interfaces/slate.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +235,7 @@
       <workItem from="1582677289277" duration="173000" />
       <workItem from="1582677472474" duration="21000" />
       <workItem from="1582677503804" duration="328000" />
-      <workItem from="1582677841623" duration="12378000" />
+      <workItem from="1582677841623" duration="12643000" />
     </task>
     <servers />
   </component>
