@@ -69,6 +69,9 @@ export default Vue.extend({
     :id="id"
     @close="closeModal"
   >
+    <template #title>
+      Edit Slate
+    </template>
     <form @submit.prevent="updateSlate">
       <div class="mb-6">
         <input

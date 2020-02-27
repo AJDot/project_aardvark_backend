@@ -60,8 +60,8 @@ export default Vue.extend({
       @click.self="close"
     >
       <div class="v-modal-body self-center">
-        <div class="v-modal-container relative border p-10 border-grey-400 shadow rounded bg-white">
-          <h3 class="text-2xl mb-6 text-grey-900">
+        <div class="v-modal-container relative border p-5 border-grey-400 shadow rounded bg-white">
+          <h3 class="text-2xl mb-6 text-grey-900 text-center">
             <slot name="title" />
           </h3>
           <button

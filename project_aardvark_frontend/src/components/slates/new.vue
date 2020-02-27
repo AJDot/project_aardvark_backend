@@ -54,6 +54,9 @@ export default Vue.extend({
     :id="id"
     @close="reset"
   >
+    <template #title>
+      Add Slate
+    </template>
     <form @submit.prevent="addSlate">
       <div class="mb-6">
         <input
