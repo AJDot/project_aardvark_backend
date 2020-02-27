@@ -19,4 +19,4 @@
 /config/master.key
 
 # Ignore RubyMine project settings
-.idea
+/.idea/*
