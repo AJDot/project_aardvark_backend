@@ -35,6 +35,7 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'semi': ['error', 'never'],
     'no-inner-declarations': 'off',
+    'camelcase': 'off', // want this to be true eventually
     "vue/attributes-order": ["error", {
       "order": [
         "DEFINITION",

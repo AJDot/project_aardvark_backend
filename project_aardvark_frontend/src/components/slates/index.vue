@@ -1,14 +1,16 @@
 <script lang="ts">
 import Vue from 'vue'
 import store from '@/store'
-import { Backend } from '@/types/backend'
-import { ISlate } from '@/types/slate'
+import { Backend } from '@/interfaces/backend'
+import { ISlate } from '@/interfaces/slate'
 import { AxiosResponse } from 'axios'
 import { Routes } from '@/router/routes'
 import mapper from '@/store/mappers/mapper'
 import { IModalState } from '@/store/modules/modals'
 import { Modals } from '@/modules/modals'
 import NewSlate from './new.vue'
+import EditSlate from './edit.vue'
+import Slate from '@/models/slate'
 
 const modalStore = mapper('modals', {
   state: {},
@@ -24,15 +26,16 @@ interface IData {
 }
 
 export default Vue.extend({
-  name: 'SlatesIndex',
+  name: 'Slates',
   components: {
     NewSlate,
+    EditSlate,
   },
   data: function (): IData {
     return {
       slates: [],
       error: '',
-      editedSlate: { id: '', title: '' },
+      editedSlate: new Slate(),
     }
   },
   computed: {
@@ -51,7 +54,7 @@ export default Vue.extend({
     } else {
       this.$http.secured.get('/api/v1/slates')
         .then((response: AxiosResponse) => {
-          this.slates = response.data
+          this.slates = response.data.map((json: ISlate) => new Slate().load(json))
         })
         .catch((error: Backend.IResponse) => this.setError(error, 'Something went wrong'))
     }
@@ -68,7 +71,6 @@ export default Vue.extend({
       if (!slate) {
         return
       }
-      console.log(slate)
       this.$http.secured.post(Routes.apiPath(Routes.Path.Slates), { slate: { title: slate.title } })
         .then(response => {
           this.slates.push(response.data)
@@ -84,12 +86,15 @@ export default Vue.extend({
     },
     editSlate (slate: ISlate) {
       this.editedSlate = slate
+      this.open({ id: Modals.Id.EditSlate })
     },
-    // updateSlate (slate: ISlate) {
-    //   this.editedSlate = getDefaultSlate()
-    //   this.$http.secured.patch(Routes.apiPath(Routes.Path.Slate, { id: slate.id, title: slate.title }))
-    //     .catch(error => this.setError(error, 'Cannot update slate'))
-    // },
+    updateSlate ({ slate, json }: { slate: Slate, json: Partial<Slate> }) {
+      this.$http.secured.patch(Routes.apiPath(Routes.Path.Slate, { id: slate.id }), json)
+        .then(response => {
+          slate.load(response.data)
+        })
+        .catch(error => this.setError(error, 'Cannot update slate'))
+    },
   },
 })
 </script>
@@ -121,13 +126,13 @@ export default Vue.extend({
           </p>
 
           <button
-            class="by-transparent text-sm hover:bg-blue hover:text-white text-blue border border-blue no-underline font-bold py2 px-4 mr-2 rounded"
+            class="by-transparent text-sm hover:bg-blue-600 hover:text-white text-blue-600 border border-blue-600 no-underline font-bold py2 px-4 mr-2 rounded"
             @click.prevent="editSlate(slate)"
           >
             Edit
           </button>
           <button
-            class="by-transparent text-sm hover:bg-red hover:text-white text-red border border-red no-underline font-bold py2 px-4 mr-2 rounded"
+            class="by-transparent text-sm hover:bg-red-600 hover:text-white text-red-600 border border-red-600 no-underline font-bold py2 px-4 mr-2 rounded"
             @click.prevent="removeSlate(slate)"
           >
             Delete
@@ -137,5 +142,9 @@ export default Vue.extend({
     </ul>
 
     <new-slate @add="addSlate" />
+    <edit-slate
+      :slate="editedSlate"
+      @update="updateSlate"
+    />
   </div>
 </template>

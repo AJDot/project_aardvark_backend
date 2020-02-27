@@ -5,13 +5,8 @@ export const StringHelper = {
     return str.length > 0
   },
   interpolate (str: string, params: Hash<string> = {}): string {
-    for (const key in params) {
-      if (Object.prototype.hasOwnProperty.call(params, key)) {
-        str.replace(new RegExp(`:${key}`, 'g'), () => {
-          return params[key]
-        })
-      }
-    }
-    return str
+    return str.replace(new RegExp(/:(.+)(?:\b|$)/g), (match, capturedKey) => {
+      return params[capturedKey]
+    })
   },
 }

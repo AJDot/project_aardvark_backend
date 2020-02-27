@@ -1,46 +1,64 @@
 <script lang="ts">
 import Vue from 'vue'
 import Modal from '@/components/modals/modal.vue'
-import { ISlate } from '@/interfaces/slate'
 import mapper from '@/store/mappers/mapper'
 import { Modals } from '@/modules/modals'
 import Slate from '@/models/slate'
 
 const modalStore = mapper('modals', {
   state: {},
-  getters: {},
+  getters: { find: 'find' },
   mutations: { close: 'close' },
   actions: {},
 })
 
 interface IData {
-  newSlate: ISlate
   id: Modals.Id
+  slateCopy: Slate
 }
 
 export default Vue.extend({
-  name: 'NewSlate',
+  name: 'EditSlate',
   components: {
     Modal,
   },
+  props: {
+    slate: {
+      type: Object as () => Slate,
+      required: true,
+    },
+  },
   data: function (): IData {
+    console.log(this.slate.jsonify())
     return {
-      newSlate: new Slate(),
-      id: Modals.Id.NewSlate,
+      id: Modals.Id.EditSlate,
+      slateCopy: new Slate(),
     }
+  },
+  computed: {
+    ...modalStore.computed,
+    isOpen (): boolean {
+      return this.find(this.id)?.isOpen
+    },
+  },
+  watch: {
+    isOpen: function (newVal, oldVal) {
+      if (newVal) {
+        this.setCopy()
+      }
+    },
   },
   methods: {
     ...modalStore.methods,
-    addSlate () {
-      this.$emit('add', this.newSlate)
-      this.newSlate = this.getDefaultSlate()
+    updateSlate () {
+      this.$emit('update', { slate: this.slate, json: this.slateCopy.jsonify({ only: ['title'] }) })
       this.closeModal()
-    },
-    getDefaultSlate (): ISlate {
-      return new Slate()
     },
     closeModal (): void {
       this.close({ id: this.id })
+    },
+    setCopy (): void {
+      this.slateCopy = new Slate().load(this.slate.jsonify())
     },
   },
 })
@@ -51,10 +69,10 @@ export default Vue.extend({
     :id="id"
     @close="closeModal"
   >
-    <form @submit.prevent="addSlate">
+    <form @submit.prevent="updateSlate">
       <div class="mb-6">
         <input
-          v-model="newSlate.title"
+          v-model="slateCopy.title"
           v-focus
           type="text"
           class="input"
@@ -63,7 +81,7 @@ export default Vue.extend({
         >
         <input
           type="submit"
-          value="Add Slate"
+          value="Update Slate"
           class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:bg-green-700 block w-full py-4 text-white item-center justify-center"
         >
       </div>

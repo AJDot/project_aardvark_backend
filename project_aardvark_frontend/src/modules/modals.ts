@@ -4,5 +4,6 @@ export module Modals {
     SignUp,
     SignIn,
     NewSlate,
+    EditSlate,
   }
 }

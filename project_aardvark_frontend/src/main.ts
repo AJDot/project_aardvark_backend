@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import './vue/global'
 import App from '@/app.vue'
 import router from '@/router'
 import VueAxios from 'vue-axios'
