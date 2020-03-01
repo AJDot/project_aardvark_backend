@@ -116,6 +116,7 @@ export default Vue.extend({
         <input
           id="email"
           v-model="email"
+          v-focus
           type="email"
           class="input"
           placeholder="awesome@email.com"
