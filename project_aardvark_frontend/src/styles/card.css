@@ -1,0 +1,16 @@
+.card-box {
+  @apply w-full;
+  @apply flex flex-wrap;
+}
+
+.card {
+  @apply overflow-auto;
+  @apply rounded-md;
+  @apply shadow;
+  @apply w-64 m-2;
+
+  &.slate {
+    @apply max-w-md box-border;
+    @apply bg-green-600;
+  }
+}

@@ -11,4 +11,8 @@ declare module 'vue/types/vue' {
     $http: { secured: AxiosInstance, plain: AxiosInstance }
     $router: VueRouter
   }
+
+  interface VueConstructor {
+    axios: { secured: AxiosInstance, plain: AxiosInstance }
+  }
 }
