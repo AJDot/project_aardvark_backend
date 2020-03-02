@@ -46,7 +46,7 @@ const actions = {
       console.warn('Cannot delete slate')
     }
 
-    commit('destroy', slate.id)
+    commit('destroy', slate)
     return response
   },
 }

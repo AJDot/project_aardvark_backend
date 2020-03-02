@@ -11,5 +11,5 @@ class User
 
   validates :email, presence: true, uniqueness: true
 
-  has_many :slates, dependent: :destroy
+  has_many :slates, class_name: Slate.name, dependent: :destroy
 end

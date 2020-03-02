@@ -4,6 +4,7 @@ import Slate from '@/models/slate'
 import { Modals } from '@/modules/modals'
 import { Backend } from '@/interfaces/backend'
 import mapper from '@/store/mappers/mapper'
+import Item from '@/components/slates/item.vue'
 
 const modalStore = mapper('modals', {
   state: {},
@@ -18,6 +19,9 @@ interface IData {
 
 export default Vue.extend({
   name: 'SlateCard',
+  components: {
+    Item,
+  },
   props: {
     slate: {
       type: Object as () => Slate,
@@ -57,15 +61,23 @@ export default Vue.extend({
       {{ slate.title }}
     </h3>
 
+    <ul>
+      <item
+        v-for="item in slate.items"
+        :key="item.id"
+        :item="item"
+      />
+    </ul>
+
     <div class="cta">
       <button
-        class="by-transparent text-sm hover:bg-blue-600 hover:text-white text-blue-600 border border-blue-600 no-underline font-bold py2 px-4 mr-2 rounded"
+        class="blue"
         @click.prevent="editSlate"
       >
         Edit
       </button>
       <button
-        class="by-transparent text-sm hover:bg-red-600 hover:text-white text-red-600 border border-red-600 no-underline font-bold py2 px-4 mr-2 rounded"
+        class="red"
         @click.prevent="removeSlate"
       >
         Delete

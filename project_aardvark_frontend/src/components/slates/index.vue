@@ -93,8 +93,8 @@ export default Vue.extend({
       <slate-card
         v-for="slate in slates"
         :key="slate.id"
-        tag="li"
         :slate="slate"
+        tag="li"
       />
     </ul>
 
