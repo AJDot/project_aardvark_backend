@@ -19,5 +19,27 @@
         @apply bg-blue-600 text-white;
       }
     }
+
+    &.white {
+      @apply text-white border-white;
+
+      &:hover {
+        @apply bg-white;
+      }
+
+      &.hover {
+        &-blue {
+          &:hover {
+            @apply text-blue-600;
+          }
+        }
+
+        &-red {
+          &:hover {
+            @apply text-red-600;
+          }
+        }
+      }
+    }
   }
 }

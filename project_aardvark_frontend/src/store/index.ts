@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import modals from './modules/modals'
 import slates from './modules/slates'
+import slateItems from './modules/slateItems'
 import createLogger from 'vuex/dist/logger'
 
 const debug = process.env.NODE_ENV !== 'production'
@@ -11,6 +12,7 @@ const store = new Vuex.Store({
   modules: {
     modals,
     slates,
+    slateItems,
   },
   strict: debug,
   plugins: debug ? [createLogger()] : [],

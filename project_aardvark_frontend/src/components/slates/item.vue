@@ -1,12 +1,12 @@
 <script lang="ts">
 import Vue from 'vue'
-import { Slate } from '@/interfaces/slates/item'
+import { Slates } from '@/interfaces/slates/item'
 
 export default Vue.extend({
   name: 'SlateItem',
   props: {
     item: {
-      type: Object as () => Slate.IItem,
+      type: Object as () => Slates.IItem,
       required: true,
     },
   },

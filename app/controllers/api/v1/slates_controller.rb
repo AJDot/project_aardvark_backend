@@ -8,12 +8,12 @@ module Api
       def index
         @slates = current_user.slates.all
 
-        render json: @slates
+        render json: @slates.as_json
       end
 
       # GET /slates/1
       def show
-        render json: @slate
+        render json: @slate.as_json
       end
 
       # POST /slates
@@ -21,7 +21,7 @@ module Api
         @slate = current_user.slates.build(slate_params)
 
         if @slate.save
-          render json: @slate, status: :created
+          render json: @slate.as_json, status: :created
         else
           render json: @slate.errors, status: :unprocessable_entity
         end
@@ -30,7 +30,7 @@ module Api
       # PATCH/PUT /slates/1
       def update
         if @slate.update(slate_params)
-          render json: @slate
+          render json: @slate.as_json
         else
           render json: @slate.errors, status: :unprocessable_entity
         end
@@ -52,6 +52,10 @@ module Api
       def slate_params
         params.require(:slate).permit(
           :title,
+          items_attributes: [
+            :id,
+            :description,
+          ],
         ).to_hash
       end
     end

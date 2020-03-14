@@ -12,5 +12,16 @@
   &.slate {
     @apply max-w-md box-border;
     @apply bg-green-600;
+    @apply cursor-pointer;
+  }
+
+  & .list {
+    @apply overflow-y-hidden;
+
+    max-height: 16rem;
+  }
+
+  & .cta {
+    @apply flex shadow-top;
   }
 }

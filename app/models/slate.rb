@@ -6,6 +6,13 @@ class Slate
   field :title, type: String
 
   embeds_many :items, class_name: Slates::Item.name
+  accepts_nested_attributes_for :items
 
   validates :title, presence: true
+
+  def as_json(opts = {})
+    attrs = super
+    attrs['items'] = items.as_json(opts)
+    attrs
+  end
 end

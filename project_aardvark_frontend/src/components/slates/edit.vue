@@ -6,6 +6,7 @@ import { Modals } from '@/modules/modals'
 import Slate from '@/models/slate'
 import { IModalState } from '@/store/modules/modals'
 import { Backend } from '@/interfaces/backend'
+import EditItem from '@/components/slates/edit-item.vue'
 
 const modalStore = mapper('modals', {
   state: {},
@@ -16,7 +17,6 @@ const modalStore = mapper('modals', {
 
 interface IData {
   id: Modals.Id
-  slateCopy: Slate
   error: string
 }
 
@@ -24,11 +24,11 @@ export default Vue.extend({
   name: 'EditSlate',
   components: {
     Modal,
+    EditItem,
   },
   data: function (): IData {
     return {
       id: Modals.Id.EditSlate,
-      slateCopy: new Slate(),
       error: '',
     }
   },
@@ -47,13 +47,6 @@ export default Vue.extend({
       return this.modalState.props.slate
     },
   },
-  watch: {
-    isOpen: function (newVal, oldVal) {
-      if (newVal) {
-        this.setCopy()
-      }
-    },
-  },
   methods: {
     ...modalStore.methods,
     setError (error: Backend.IResponse, text: string): void {
@@ -62,15 +55,15 @@ export default Vue.extend({
     closeModal (): void {
       this.close({ id: this.id })
     },
-    setCopy (): void {
-      this.slateCopy = new Slate().load(this.slate.jsonify())
-    },
     async updateSlate () {
       await this.$store.dispatch('slates/update', {
         slate: this.slate,
-        json: this.slateCopy.jsonify({ only: ['title'] }),
+        json: this.slate.jsonify({ only: ['title', 'items'] }),
       })
       this.closeModal()
+    },
+    async addItem () {
+      await this.$store.dispatch('slateItems/create', { slate: this.slate, item: { description: '' } })
     },
   },
 })
@@ -78,6 +71,7 @@ export default Vue.extend({
 
 <template>
   <modal
+    v-if="slate"
     :id="id"
     @close="closeModal"
   >
@@ -87,13 +81,31 @@ export default Vue.extend({
     <form @submit.prevent="updateSlate">
       <div class="mb-6">
         <input
-          v-model="slateCopy.title"
+          v-model="slate.title"
           v-focus
           type="text"
           class="input"
           autocomplete="off"
           placeholder="Enter slate title"
         >
+      </div>
+      <ul>
+        <li
+          v-for="item in slate.items"
+          :key="item.id"
+        >
+          <edit-item :item="item" />
+        </li>
+      </ul>
+      <div class="cta">
+        <button
+          type="button"
+          @click="addItem"
+        >
+          Add Item
+        </button>
+      </div>
+      <div class="cta">
         <input
           type="submit"
           value="Update Slate"

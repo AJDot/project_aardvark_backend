@@ -17,6 +17,8 @@ export module Routes {
     SignIn = '/sign_in',
     Slates = '/slates',
     Slate = '/slates/:id',
+    SlateItems = '/slates/:slateId/items',
+    SlateItem = '/slates/:slateId/items/:id',
     NotFound = '*'
   }
 

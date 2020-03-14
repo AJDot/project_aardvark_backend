@@ -56,12 +56,13 @@ export default Vue.extend({
   <component
     :is="tag"
     class="card slate"
+    @click="editSlate"
   >
     <h3 class="m-1">
       {{ slate.title }}
     </h3>
 
-    <ul>
+    <ul class="list">
       <item
         v-for="item in slate.items"
         :key="item.id"
@@ -71,14 +72,8 @@ export default Vue.extend({
 
     <div class="cta">
       <button
-        class="blue"
-        @click.prevent="editSlate"
-      >
-        Edit
-      </button>
-      <button
-        class="red"
-        @click.prevent="removeSlate"
+        class="white hover-red"
+        @click.stop.prevent="removeSlate"
       >
         Delete
       </button>
