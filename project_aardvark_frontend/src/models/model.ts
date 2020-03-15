@@ -52,14 +52,12 @@ export default abstract class Model implements IModel {
   jsonify (options: { only?: TClassKey[], except?: TClassKey[] } = {}): Hash {
     const json: Hash = {}
     const allKeys = Reflect.ownKeys(this)
-      .concat(Reflect.ownKeys(Object.getPrototypeOf(this)))
-      .filter(k => k.toString() !== 'constructor')
     const keys = ArrayHelper.pick(allKeys, options) as string[]
     const relationKeys = Object.keys(this._relations)
     for (const key of keys) {
-      if (String(key).startsWith('_')) continue
-      const val: this[keyof this] = this[key as keyof this]
       let jKey = key.toString()
+      if (jKey.startsWith('_')) continue
+      const val: this[keyof this] = this[key as keyof this]
       if (relationKeys.includes(key.toString())) jKey = jKey + '_attributes'
       if (Array.isArray(val)) {
         json[jKey] = val.map(x => {
