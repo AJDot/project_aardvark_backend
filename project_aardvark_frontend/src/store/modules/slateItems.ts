@@ -12,10 +12,10 @@ const state: IState = {}
 const getters = {}
 
 const actions = {
-  async create ({ state, commit }: { state: IState, commit: Commit }, { slate, item }: { slate: Slate, item: object }) {
+  async create ({ state, commit }: { state: IState, commit: Commit }, { slate, slateItem }: { slate: Slate, slateItem: object }) {
     let response
     try {
-      response = await Vue.axios.secured.post(Routes.apiPath(Routes.Path.SlateItems, { slateId: slate.id }), { item: item })
+      response = await Vue.axios.secured.post(Routes.apiPath(Routes.Path.SlateItems, { slateId: slate.id }), { slateItem: slateItem })
     } catch (e) {
       response = { data: {} }
       console.warn('Something went wrong')
@@ -23,26 +23,37 @@ const actions = {
     commit('slates/addItem', { slate: slate, json: response.data }, { root: true })
     return response
   },
-  async destroy ({ state, commit }: { state: IState, commit: Commit }, { item }: { item: SlateItem }) {
+  async update ({ state, commit }: { state: IState, commit: Commit }, { slateItem, json }: { slateItem: SlateItem, json: Partial<SlateItem> }) {
     let response
-    if (!item.slate_id) throw new Error(`Slate Item (${item.id}) does not have a slate_id`)
+    try {
+      response = await Vue.axios.secured.patch(Routes.apiPath(Routes.Path.SlateItem, { slateId: slateItem.slate_id, id: slateItem.id }), { item: json })
+    } catch (e) {
+      console.warn('Cannot update slate item')
+      throw e
+    }
+    commit('update', { slateItem: slateItem, json: response.data })
+    return response
+  },
+  async destroy ({ state, commit }: { state: IState, commit: Commit }, { slateItem }: { slateItem: SlateItem }) {
+    let response
+    if (!slateItem.slate_id) throw new Error(`Slate Item (${slateItem.id}) does not have a slate_id`)
     try {
       response = await Vue.axios.secured.delete(Routes.apiPath(Routes.Path.SlateItem, {
-        slateId: item.slate_id,
-        id: item.id,
+        slateId: slateItem.slate_id,
+        id: slateItem.id,
       }))
     } catch (e) {
       response = { data: {} }
       console.warn('Something went wrong')
     }
-    commit('slates/removeItem', { slate: item.slate, item: item }, { root: true })
+    commit('slates/removeItem', { slate: slateItem.slate, slateItem: slateItem }, { root: true })
     return response
   },
 }
 
 const mutations = {
-  update (state: IState, { item, json }: { item: SlateItem, json: Partial<SlateItem> }) {
-    item.load(json)
+  update (state: IState, { slateItem, json }: { slateItem: SlateItem, json: Partial<SlateItem> }) {
+    slateItem.load(json)
   },
 }
 

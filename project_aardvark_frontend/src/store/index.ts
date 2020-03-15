@@ -32,6 +32,12 @@ const store = new Vuex.Store({
       delete localStorage.signedIn
       delete localStorage.csrf
     },
+    update (state, { object, json }) {
+      object.load(json)
+    },
+    updateObject (state, { object, key, value }) {
+      object[key] = value
+    },
   },
   actions: {
     signIn ({ commit }, csrf: string) {

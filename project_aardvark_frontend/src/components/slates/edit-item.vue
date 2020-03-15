@@ -13,16 +13,6 @@ export default Vue.extend({
   data: function () {
     return {}
   },
-  computed: {
-    description: {
-      get (): SlateItem['description'] {
-        return this.item.description
-      },
-      set (val: SlateItem['description']) {
-        this.$store.commit('slateItems/update', { item: this.item, json: { description: val } })
-      },
-    },
-  },
   methods: {
     async destroy () {
       await this.$store.dispatch('slateItems/destroy', { item: this.item })
@@ -39,7 +29,7 @@ export default Vue.extend({
     />
     <input
       :id="`item-${item.id}`"
-      v-model="description"
+      v-model="item.description"
       type="text"
       autocomplete="off"
       class="input"

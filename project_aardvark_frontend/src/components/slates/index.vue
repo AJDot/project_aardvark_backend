@@ -2,7 +2,6 @@
 import Vue from 'vue'
 import store from '@/store'
 import { Backend } from '@/interfaces/backend'
-import { ISlate } from '@/interfaces/slate'
 import { Routes } from '@/router/routes'
 import mapper from '@/store/mappers/mapper'
 import { IModalState } from '@/store/modules/modals'
@@ -61,7 +60,7 @@ export default Vue.extend({
     newSlate (): void {
       this.open({ id: this.newSlateModalState.id })
     },
-    addSlate (slate: ISlate): void {
+    addSlate (slate: Slate): void {
       if (!slate) {
         return
       }

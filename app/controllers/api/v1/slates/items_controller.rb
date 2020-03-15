@@ -16,6 +16,14 @@ module Api
           end
         end
 
+        def update
+          if @item.update(item_params)
+            render json: @item.as_json
+          else
+            render json: @item.errors, status: :unprocessable_entity
+          end
+        end
+
         def destroy
           if @item.destroy
             render json: @item, status: :ok
