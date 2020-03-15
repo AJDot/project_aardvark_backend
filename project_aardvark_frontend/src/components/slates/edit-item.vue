@@ -15,7 +15,7 @@ export default Vue.extend({
   },
   methods: {
     async destroy () {
-      await this.$store.dispatch('slateItems/destroy', { item: this.item })
+      await this.$store.dispatch('slateItems/destroy', { slateItem: this.item })
     },
   },
 })

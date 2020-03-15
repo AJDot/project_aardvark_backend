@@ -43,7 +43,7 @@ export default abstract class Model implements IModel {
           this[_key] = json[key]
         }
         // after first set, start tracking
-        this._tracking[key] = true
+        this._tracking[sKey] = true
       }
     }
     return this
@@ -51,7 +51,7 @@ export default abstract class Model implements IModel {
 
   jsonify (options: { only?: TClassKey[], except?: TClassKey[] } = {}): Hash {
     const json: Hash = {}
-    const allKeys = Object.keys(this)
+    const allKeys = Object.keys(this._tracking).filter(k => this._tracking[k])
     const keys = ArrayHelper.pick(allKeys, options) as string[]
     const relationKeys = Object.keys(this._relations)
     for (const key of keys) {
@@ -81,11 +81,11 @@ export default abstract class Model implements IModel {
 
   // Track Changes **************************************
   trackChange (key: keyof this, oldVal: any, newVal: any) {
-    if (this._tracking[key]) {
+    const sKey: string = key.toString()
+    if (this._tracking[sKey]) {
       // so rails knows to empty the array
       if (Array.isArray(oldVal) && oldVal.length === 0) oldVal = ['']
       if (Array.isArray(newVal) && newVal.length === 0) newVal = ['']
-      const sKey: string = key.toString()
       if (this._changes[sKey]) {
         // if change already present
         store.commit('updateObject', { object: this._changes[sKey], key: 'newVal', value: newVal })
@@ -101,6 +101,6 @@ export default abstract class Model implements IModel {
 
   _changes: Hash<IChange<this>> = {}
 
-  _tracking: TPartialKeys<this, boolean> = {}
+  _tracking: Hash<boolean> = {}
   // Track Changes End **********************************
 }

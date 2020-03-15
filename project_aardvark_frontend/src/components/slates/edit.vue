@@ -7,6 +7,7 @@ import Slate from '@/models/slate'
 import { IModalState } from '@/store/modules/modals'
 import { Backend } from '@/interfaces/backend'
 import EditItem from '@/components/slates/edit-item.vue'
+import SlateItem from '@/models/slateItem'
 
 const modalStore = mapper('modals', {
   state: {},
@@ -55,15 +56,8 @@ export default Vue.extend({
     closeModal (): void {
       this.close({ id: this.id })
     },
-    async updateSlate () {
-      await this.$store.dispatch('slates/update', {
-        slate: this.slate,
-        json: this.slate.jsonify({ only: ['title', 'items'] }),
-      })
-      this.closeModal()
-    },
     async addItem () {
-      await this.$store.dispatch('slateItems/create', { slate: this.slate, item: { description: '' } })
+      await this.$store.dispatch('slateItems/create', { slate: this.slate, slateItem: new SlateItem(this.slate).jsonify() })
     },
   },
 })

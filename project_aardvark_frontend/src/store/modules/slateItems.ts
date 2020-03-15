@@ -15,7 +15,7 @@ const actions = {
   async create ({ state, commit }: { state: IState, commit: Commit }, { slate, slateItem }: { slate: Slate, slateItem: object }) {
     let response
     try {
-      response = await Vue.axios.secured.post(Routes.apiPath(Routes.Path.SlateItems, { slateId: slate.id }), { slateItem: slateItem })
+      response = await Vue.axios.secured.post(Routes.apiPath(Routes.Path.SlateItems, { slateId: slate.id }), { item: slateItem })
     } catch (e) {
       response = { data: {} }
       console.warn('Something went wrong')

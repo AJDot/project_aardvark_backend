@@ -70,10 +70,10 @@ const mutations = {
       slate.items.push(slate._relations.items.create(slate, json).load(json))
     }
   },
-  removeItem (state: IState, { slate, item }: { slate: Slate, item: Slates.IItem }) {
-    const slateItem: SlateItem | undefined = slate.items.find(i => i.id === item.id)
-    if (slateItem) {
-      slate.items.splice(slate.items.indexOf(slateItem), 1)
+  removeItem (state: IState, { slate, slateItem }: { slate: Slate, slateItem: Slates.IItem }) {
+    const item: SlateItem | undefined = slate.items.find(i => i.id === slateItem.id)
+    if (item) {
+      slate.items.splice(slate.items.indexOf(item), 1)
     }
   },
 }

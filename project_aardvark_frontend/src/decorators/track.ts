@@ -39,11 +39,11 @@ export default function trackFactory (Type: any) {
         target.trackChange(key, currVal, newVal)
       },
     })
-    DebugHelper.log('Tracking', 'commit', target, key, initialValue)
+    DebugHelper.log('Tracking', 'initial commit', target, key, initialValue)
     store.commit(mutation, {
       [singular]: target,
       json: {
-        [_key]: initialValue,
+        [key]: initialValue,
       },
     })
   }
