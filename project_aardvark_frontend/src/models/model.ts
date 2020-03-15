@@ -51,7 +51,7 @@ export default abstract class Model implements IModel {
 
   jsonify (options: { only?: TClassKey[], except?: TClassKey[] } = {}): Hash {
     const json: Hash = {}
-    const allKeys = Reflect.ownKeys(this)
+    const allKeys = Object.keys(this)
     const keys = ArrayHelper.pick(allKeys, options) as string[]
     const relationKeys = Object.keys(this._relations)
     for (const key of keys) {

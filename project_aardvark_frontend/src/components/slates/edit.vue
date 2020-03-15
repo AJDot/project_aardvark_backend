@@ -78,40 +78,40 @@ export default Vue.extend({
     <template #title>
       Edit Slate
     </template>
-    <form @submit.prevent="updateSlate">
-      <div class="mb-6">
-        <input
-          v-model="slate.title"
-          v-focus
-          type="text"
-          class="input"
-          autocomplete="off"
-          placeholder="Enter slate title"
-        >
-      </div>
-      <ul>
-        <li
-          v-for="item in slate.items"
-          :key="item.id"
-        >
-          <edit-item :item="item" />
-        </li>
-      </ul>
-      <div class="cta">
-        <button
-          type="button"
-          @click="addItem"
-        >
-          Add Item
-        </button>
-      </div>
-      <div class="cta">
-        <input
-          type="submit"
-          value="Update Slate"
-          class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:bg-green-700 block w-full py-4 text-white item-center justify-center"
-        >
-      </div>
-    </form>
+    <div class="mb-6">
+      <input
+        v-model="slate.title"
+        v-focus
+        type="text"
+        class="input"
+        autocomplete="off"
+        placeholder="Enter slate title"
+      >
+    </div>
+    <ul class="max-h-half-screen overflow-auto">
+      <li
+        v-for="item in slate.items"
+        :key="item.id"
+      >
+        <edit-item :item="item" />
+      </li>
+    </ul>
+    <div class="cta">
+      <button
+        type="button"
+        @click="addItem"
+      >
+        Add Item
+      </button>
+    </div>
+    <div class="cta">
+      <button
+        type="button"
+        class="font-sans font-bold px-4 rounded cursor-pointer no-underline bg-green-600 hover:bg-green-700 block w-full py-4 text-white item-center justify-center"
+        @click="closeModal"
+      >
+        Close
+      </button>
+    </div>
   </modal>
 </template>
