@@ -64,14 +64,15 @@ export default Vue.extend({
           <h3 class="text-2xl mb-6 text-grey-900 text-center">
             <slot name="title" />
           </h3>
-          <button
-            type="button"
+
+          <icon
+            tag="button"
+            icon="cross"
             class="absolute top-0 right-0 mx-3 py-1"
             @click="close"
           >
             <span class="sr-only">Dismiss Modal</span>
-            x
-          </button>
+          </icon>
           <transition
             name="fade-in-out"
             mode="out-in"

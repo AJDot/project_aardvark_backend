@@ -70,18 +70,15 @@ export default Vue.extend({
     @close="closeModal"
   >
     <template #title>
-      Edit Slate
-    </template>
-    <div class="mb-6">
       <input
         v-model="slate.title"
         v-focus
         type="text"
-        class="input"
+        class="input clear"
         autocomplete="off"
         placeholder="Enter slate title"
       >
-    </div>
+    </template>
     <ul class="max-h-half-screen overflow-auto">
       <li
         v-for="item in slate.items"

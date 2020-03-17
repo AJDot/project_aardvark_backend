@@ -22,7 +22,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div>
+  <div class="flex items-center">
     <label
       :for="`item-${item.id}`"
       class="sr-only"
@@ -32,13 +32,12 @@ export default Vue.extend({
       v-model="item.description"
       type="text"
       autocomplete="off"
-      class="input"
+      class="input flex-1"
     >
-    <button
-      type="button"
+    <icon
+      tag="button"
+      icon="cross"
       @click.stop="destroy"
-    >
-      x
-    </button>
+    />
   </div>
 </template>

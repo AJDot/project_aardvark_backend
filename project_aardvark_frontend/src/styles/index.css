@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities.css';
 @import './typeography.css';
 @import './layout.css';
+@import './icons.css';
 @import './button.css';
 @import './input.css';
 @import './hero.css';
