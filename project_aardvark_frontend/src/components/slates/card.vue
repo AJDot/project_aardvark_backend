@@ -5,6 +5,7 @@ import { Modals } from '@/modules/modals'
 import { Backend } from '@/interfaces/backend'
 import mapper from '@/store/mappers/mapper'
 import Item from '@/components/slates/item.vue'
+import tagMixin from '@/mixins/tagMixin'
 
 const modalStore = mapper('modals', {
   state: {},
@@ -22,14 +23,13 @@ export default Vue.extend({
   components: {
     Item,
   },
+  mixins: [
+    tagMixin(),
+  ],
   props: {
     slate: {
       type: Object as () => Slate,
       required: true,
-    },
-    tag: {
-      type: String,
-      default: 'div',
     },
   },
   data: function (): IData {
@@ -67,6 +67,7 @@ export default Vue.extend({
         v-for="item in slate.items"
         :key="item.id"
         :item="item"
+        tag="li"
       />
     </ul>
 

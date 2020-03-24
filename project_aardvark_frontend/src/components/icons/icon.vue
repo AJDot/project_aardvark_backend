@@ -1,14 +1,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Hash } from '@/interfaces/basic'
+import tagMixin from '@/mixins/tagMixin'
 
 export default Vue.extend({
   name: 'Icon',
   props: {
-    tag: {
-      type: String,
-      default: 'span',
-    },
+    ...tagMixin('span').props,
     icon: {
       type: String,
       required: true,

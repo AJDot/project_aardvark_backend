@@ -75,7 +75,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="m-auto py-10">
+  <div class="m-auto px-5 py-10">
     <div
       v-if="error"
       class="text-red"
